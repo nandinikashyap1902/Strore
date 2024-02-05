@@ -8,7 +8,7 @@ function WesternWear() {
     {products.map((item,i)=>{
         return(
 (
-<Grid item key={i}  >
+<Grid item key={i} xs={6} >
   <Paper component='img' src={item.image} width="280px" key={item.id}></Paper>
 </Grid>
   ))})

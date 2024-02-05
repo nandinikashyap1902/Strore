@@ -4,6 +4,7 @@ import SignIn from './Pages/SignIn'
 import Wishlisting from './Pages/Wishlisting'
 import ProductsInBag from './Pages/ProductsInBag'
 import WesternWear from './Pages/Filters'
+import ProductDetail from './Pages/ProductDetail'
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
 <Route path="/wishlists" element={<Wishlisting/>}/>
 <Route path="/Bag" element={<ProductsInBag/>}/>
 <Route path="/Westernwear" element={<WesternWear/>}/>
+<Route path='/productdetail' element={<ProductDetail/>}/>
 </Routes>
      
      </BrowserRouter>

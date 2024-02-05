@@ -3,14 +3,14 @@ import img from '../Images/banner-1.webp'
 import img1 from "../Images/banner-2.webp"
 
 import img4 from "../Images/banner-4.webp"
-import { makeStyles} from '@mui/styles';
-import { useEffect } from 'react'
+
 import products from '../Data/products/products'
 import Testimonials from './Testimonials'
 // import cosmetic from '../Images/cosmetic.avif'
 import banner3 from '../Images/banner-3.webp'
-import { dressPage1 } from '../Data/products/dressPage1';
+import { useNavigate } from 'react-router-dom'
 import ProductDetail from './ProductDetail';
+import { useState } from 'react'
 // const useStyles = makeStyles({
 //   box:{
 //     width:'150px'
@@ -21,6 +21,8 @@ import ProductDetail from './ProductDetail';
 //   // }
 // })
 function Middle() {
+  const navigate = useNavigate();
+  const[list,setLists] = useState([])
   // const[productlists,setproductslists] = useState([])
   // const classes = useStyles();
 // useEffect(()=>{
@@ -42,12 +44,10 @@ function Middle() {
 // fetchdata();
 // },[])
 function showProductDetail(event,i){
+  //console.log(i)
   
-   return(
-<>
-<ProductDetail item={i}></ProductDetail>
-</>
-   ) 
+  navigate('/productdetail')
+  setLists([i])
   
 }
 return (
@@ -117,8 +117,7 @@ return (
 (
 <Grid item key={i}  >
   <Paper component='img' src={item.image} width="300px" key={item.id} 
-  onClick={(e)=>showProductDetail(e,item)} sx={{cursor:'pointer'}}>
-    
+  onClick={()=>showProductDetail(item)} sx={{cursor:'pointer'}}>
   </Paper>
 </Grid>
   ))})
@@ -126,6 +125,7 @@ return (
     </Grid>
    
     <Testimonials></Testimonials>
+    {list.length > 0 && <ProductDetail product={list} />}
     </>
   )
 }

@@ -40,7 +40,7 @@ function Filters() {
 <Divider></Divider>
 
 <Grid container >
-  <Grid item sx={{width:'250px'}} xs={12}>
+  <Grid item sx={{width:'250px'}}>
   <Box>
 <Card sx={{margin:'4px'}}> 
 <List >
