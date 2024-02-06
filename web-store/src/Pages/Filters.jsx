@@ -5,28 +5,40 @@ import * as React from 'react';
 // import FormControl from '@mui/material/FormControl';
 // import Select from '@mui/material/Select';
 import Navbar from './Navbar'
-import {Typography } from '@mui/material';
+import {Checkbox, Typography,Button, Divider } from '@mui/material';
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
-import ListItemButton from '@mui/material/ListItemButton'
-import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
-import Container from '@mui/material/Container';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookTwoToneIcon from '@mui/icons-material/FacebookTwoTone';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import { makeStyles } from '@mui/styles'
 import WesternWear from './WesternWear';
 import Grid from '@mui/material/Grid';
  import Card from '@mui/material/Card';
-import { makeStyles } from '@mui/styles';
+
+import {FormControl,InputLabel,Select,MenuItem,Input} from '@mui/material';
 // import { Margin } from '@mui/icons-material';
 // import Checkbox from '@mui/material';
 // import { Divider,Container } from '@mui/material';
+import { useState } from 'react';
+import { Sheet } from '@mui/joy';
+import { Link } from 'react-router-dom';
+import { CheckBox } from '@mui/icons-material';
 const useStyles = makeStyles({
 box:{
 display:'grid'
+},
+btn:{
+  position:"relative",
+  top:"3px"
 }
-
 })
 function Filters() {
   const classes = useStyles();
+  const [age, setAge] = React.useState('');
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   // const [age, setAge] = React.useState('');
 
   // const handleChange = (event) => {
@@ -35,89 +47,144 @@ function Filters() {
   return (
     <>
 <Navbar></Navbar>
-<Box sx={{position:'relative',top:'90px',height:700,overflow:'hidden'}}>
+<Box sx={{position:'relative',top:'90px',overflow:'hidden'}}>
+  <Sheet>BreadCrum</Sheet>
+
+<Box m={2}>
 <Typography variant='p'>Filters</Typography>
-<Divider></Divider>
-
-<Grid container >
-  <Grid item sx={{width:'250px'}}>
-  <Box>
-<Card sx={{margin:'4px'}}> 
-<List >
-  <ListItem sx={{padding:'0'}}>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-  <ListItem sx={{padding:'0'}}>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-  <ListItem sx={{padding:'0'}}>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-</List>
-</Card>
-
-<Card sx={{margin:'4px'}}> 
-
-<List>
-  <ListItem>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-  <ListItem>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-  <ListItem>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-</List>
-</Card>
-
-<Card sx={{margin:'4px'}}> 
-
-<List>
-  <ListItem>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-  <ListItem>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-  <ListItem>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-</List>
-</Card>
+<span>
+  <FormControl sx={{float:'right'}}>
+        <InputLabel id="demo-simple-select-label" >Age</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={age}
+          label="Age"
+          onChange={handleChange}
+         sx={{width:80}}>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl></span>
 </Box>
-  </Grid>
+<Grid container width={2000} >
+  <Grid item>
+
   
-  <Grid item xs={12}>
+<Box className='color' m={3} >
 
-<Box sx={{position:'relative',bottom:580,left:260}}>
+<Card sx={{width:'300px'}} >
+  <label>COLOR</label>
+<List>
+  <ListItem sx={{padding:'0'}}>
+    <Checkbox></Checkbox>
+    <Link>
+    <span>YELLOW</span>
+    </Link>
+  </ListItem>
+  <ListItem sx={{padding:'0'}}>
+    <Checkbox></Checkbox>
+    <Link>
+    <span>YELLOW</span>
+    </Link>
+  </ListItem>
 
-  <WesternWear></WesternWear>
+  <ListItem sx={{padding:'0'}}>
+    <CheckBox></CheckBox>
+    <Link>
+    <span>YELLOW</span>
+    </Link>
+  </ListItem>
+</List>
+</Card>
+ 
+  
+<Card sx={{width:'300px'}}>
+  <label>COLOR</label>
+<List sx={{padding:'0'}}>
+  <ListItem>
+    <Checkbox></Checkbox>
+    <Link>
+    <span>YELLOW</span>
+    </Link>
+  </ListItem>
+
+  <ListItem>
+    <Checkbox></Checkbox>
+    <Link>
+    <span>YELLOW</span>
+    </Link>
+  </ListItem>
+  
+  <ListItem>
+    <CheckBox></CheckBox>
+    <Link>
+    <span>YELLOW</span>
+    </Link>
+  </ListItem>
+
+</List>
+</Card>
+  
+<Card sx={{width:'300px'}}>
+  <label>COLOR</label>
+<List>
+  <ListItem>
+    <Checkbox></Checkbox>
+    <Link>
+    <span>YELLOW</span>
+    </Link>
+  </ListItem>
+  <ListItem>
+    <Checkbox></Checkbox>
+    <Link>
+    <span>YELLOW</span>
+    </Link>
+  </ListItem>
+
+  <ListItem>
+    <CheckBox></CheckBox>
+    <Link>
+    <span>YELLOW</span>
+    </Link>
+  </ListItem>
+</List>
+</Card>
 </Box>
-  </Grid>
 </Grid>
 
- 
+<Grid item width={1000}  m={4}>
+<WesternWear></WesternWear>
+</Grid>
 
 
+</Grid>
+<Divider></Divider>
+<Grid container mt={6} ml={1}>
+        <Grid item >
+                   <TwitterIcon/> 
+          </Grid>
+                
+                <Grid item>
+
+                   <FacebookTwoToneIcon/>
+                </Grid>
+            
+            <Grid item>
+
+                   <InstagramIcon/>
+            </Grid>
+          </Grid>
+          <Grid  ml={1}>
+
+<Typography variant='h6'>Newsletter</Typography>
+<Typography variant='p'>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</Typography>
+<br></br>
+<Input placeholder='Email address'></Input>
+<Button variant="contained"  className={classes.btn}>Subscribe</Button>
+           
+</Grid>
 </Box>
 
  
