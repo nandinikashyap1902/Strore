@@ -4,6 +4,7 @@ import * as React from 'react';
 // import MenuItem from '@mui/material/MenuItem';
 // import FormControl from '@mui/material/FormControl';
 // import Select from '@mui/material/Select';
+import {Paper} from '@mui/material';
 import Navbar from './Navbar'
 import {Checkbox, Typography,Button, Divider } from '@mui/material';
 import List from '@mui/material/List'
@@ -12,18 +13,18 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookTwoToneIcon from '@mui/icons-material/FacebookTwoTone';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { makeStyles } from '@mui/styles'
-import WesternWear from './WesternWear';
 import Grid from '@mui/material/Grid';
  import Card from '@mui/material/Card';
-
+import products from '../Data/products/products';
 import {FormControl,InputLabel,Select,MenuItem,Input} from '@mui/material';
 // import { Margin } from '@mui/icons-material';
 // import Checkbox from '@mui/material';
 // import { Divider,Container } from '@mui/material';
-import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Sheet } from '@mui/joy';
 import { Link } from 'react-router-dom';
 import { CheckBox } from '@mui/icons-material';
+
 const useStyles = makeStyles({
 box:{
 display:'grid'
@@ -33,17 +34,14 @@ btn:{
   top:"3px"
 }
 })
+
 function Filters() {
   const classes = useStyles();
   const [age, setAge] = React.useState('');
   const handleChange = (event) => {
     setAge(event.target.value);
   };
-  // const [age, setAge] = React.useState('');
-
-  // const handleChange = (event) => {
-  //   setAge(event.target.value);
-  // };
+  
   return (
     <>
 <Navbar></Navbar>
@@ -155,7 +153,18 @@ function Filters() {
 </Grid>
 
 <Grid item width={1000}  m={4}>
-<WesternWear></WesternWear>
+<Grid  container spacing={3}>
+    {products.map((item,i)=>{
+        return(
+(
+<Grid item key={i}  >
+  <Paper component='img' src={item.image} width="300px" key={item.id}></Paper>
+  <Typography variant='h6'>{item.title}</Typography>
+  <Typography variant='p'>{item.price}</Typography>
+</Grid>
+  ))})
+}
+    </Grid>
 </Grid>
 
 
@@ -185,120 +194,13 @@ function Filters() {
 <Button variant="contained"  className={classes.btn}>Subscribe</Button>
            
 </Grid>
-</Box>
-
- 
-
-  
-
-
+</Box> 
     </>
   )
 }
 
+Filters.prototype={
+  products:PropTypes.array.isRequired
+}
 export default Filters
 
-//sx={{position:'relative',top:'70px',height:'10px',width:'100px'}}
-{/* <Container sx={{position:'relative',top:'70px',float:'right'}}>
-<Box>
-      <FormControl fullWidth >
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={age}
-          label="Age"
-          onChange={handleChange}
-          sx={{maxWidth:'100px',float:'right'}} >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-    </Box>
-    <Box>
-    <Divider></Divider>
-<h1>hii</h1>
-    </Box>
-    <Card>
-hi
-    </Card>
-</Container> */}
-
-{/* <Grid Container>
-<Box container sx={{float:'right'}}>
-
-<WesternWear></WesternWear>
-</Box>
-<Grid item>
-<Box sx={{maxWidth:'200px',Height:'800px',position:'relative',top:'70px'}}>
-  <Card>
-
- 
-FILTER
-<List>
-  <ListItem>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-  <ListItem>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-  <ListItem>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-  <Divider></Divider>
-</List>
-</Card>
-<Box>
-  Price
-<List>
-  <ListItem>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-  <ListItem>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-  <ListItem>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-  <Divider></Divider>
-</List>
-</Box>
-
-<Box>
-Side
-<List>
-  <ListItem>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-  <ListItem>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-  <ListItem>
-<ListItemButton>
-<ListItemText primary="Inbox" />
-</ListItemButton>
-  </ListItem>
-  <Divider></Divider>
-</List>
-</Box>
-</Box>
-</Grid>
-</Grid>
- */}

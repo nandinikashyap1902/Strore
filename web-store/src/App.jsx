@@ -2,11 +2,12 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Home from './Pages/Home'
 import SignIn from './Pages/SignIn'
 import Wishlisting from './Pages/Wishlisting'
-import ProductsInBag from './Pages/ProductsInBag'
-import WesternWear from './Pages/Filters'
+import WesternWear from './Pages/WesternWear'
 import ProductDetail from './Pages/ProductDetail'
-
+import WomenBags from './Pages/WomenBags'
+import { westernWear } from './Data/products/westernWear'
 function App() {
+  
     return (
       <>
       
@@ -15,12 +16,13 @@ function App() {
 <Route path="/" element={<Home/>}/>
 <Route path="/signIn" element={<SignIn/>}/>
 <Route path="/wishlists" element={<Wishlisting/>}/>
-<Route path="/Bag" element={<ProductsInBag/>}/>
-<Route path="/Westernwear" element={<WesternWear/>}/>
+<Route path="/WomenBags" element={<WomenBags/>}/>
+<Route path="/Western-wear" element={<WesternWear items={westernWear}/>}/>
 <Route path='/productdetail' element={<ProductDetail/>}/>
 </Routes>
      
      </BrowserRouter>
+     
     </>
   )
 }

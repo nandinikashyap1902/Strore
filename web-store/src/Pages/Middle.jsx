@@ -1,4 +1,4 @@
-import { Grid,Paper,Button,Box, Typography} from '@mui/material'
+import { Grid,Paper,Button,Box, Typography, Tooltip} from '@mui/material'
 import img from '../Images/banner-1.webp'
 import img1 from "../Images/banner-2.webp"
 
@@ -11,6 +11,10 @@ import banner3 from '../Images/banner-3.webp'
 import { useNavigate } from 'react-router-dom'
 import ProductDetail from './ProductDetail';
 import { useState } from 'react'
+import { styled } from '@mui/material/styles';
+import  { tooltipClasses } from '@mui/material/Tooltip';
+import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
+import FavoriteBorderTwoToneIcon from '@mui/icons-material/FavoriteBorderTwoTone';
 // const useStyles = makeStyles({
 //   box:{
 //     width:'150px'
@@ -20,6 +24,23 @@ import { useState } from 'react'
 //   //   top:'10'
 //   // }
 // })
+const CustomWidthTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))({
+  [`& .${tooltipClasses.tooltip}`]: {
+    maxWidth: 300,
+  },
+});
+const longText = 
+
+  <>
+<ShoppingCartTwoToneIcon/>
+<FavoriteBorderTwoToneIcon/>
+</>
+
+
+;
+
 function Middle() {
   const navigate = useNavigate();
   const[list,setLists] = useState([])
@@ -116,9 +137,12 @@ return (
         return(
 (
 <Grid item key={i}  >
+  <CustomWidthTooltip title={longText} >
+
   <Paper component='img' src={item.image} width="300px" key={item.id} 
   onClick={()=>showProductDetail(item)} sx={{cursor:'pointer'}}>
   </Paper>
+  </CustomWidthTooltip>
 </Grid>
   ))})
 }

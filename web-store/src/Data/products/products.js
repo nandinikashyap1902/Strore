@@ -5,37 +5,37 @@ const products =[{
     price: 1000
 },
 {
-    id:1,
+    id:2,
     image:'https://fazena.myshopify.com/cdn/shop/products/24_large.jpg?v=1587373968',
     title:'top',
     price: 2000
 },
 {
-    id:1,
+    id:3,
     image:'https://fazena.myshopify.com/cdn/shop/products/7_large.jpg?v=1587373134',
     title:'Women watch',
     price: 4000
 },
 {
-    id:1,
+    id:4,
     image:'https://fazena.myshopify.com/cdn/shop/products/13_large.jpg?v=1587372107',
     title:'footwear',
     price: 1000
 },
 {
-    id:1,
-    image:'https://fazena.myshopify.com/cdn/shop/products/18_large.jpg?v=1587372968',
+    id:5,
+    image:'https://fazena.myshopify.com/cdn/shop/products/25_large.jpg?v=1587372819',
     title:'hoodie',
     price: 1000
 },
 {
-    id:1,
+    id:6,
     image:'https://fazena.myshopify.com/cdn/shop/products/39_large.jpg?v=1587372294',
     title:'shorts',
     price: 1000
 },
 {
-    id:1,
+    id:7,
     image:'https://fazena.myshopify.com/cdn/shop/products/1_large.jpg?v=1587365160',
     title:'stylish pink top',
     price:600

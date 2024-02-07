@@ -1,21 +1,11 @@
+import Filters from "./Filters"
+//import { westernWear } from "../Data/products/westernWear"
 
-import { Grid,Paper, Typography } from '@mui/material'
-import products from '../Data/products/products'
-function WesternWear() {
+function WesternWear(items) {
   return (
     <>
-    <Grid  container spacing={3}>
-    {products.map((item,i)=>{
-        return(
-(
-<Grid item key={i}  >
-  <Paper component='img' src={item.image} width="300px" key={item.id}></Paper>
-  <Typography variant='h6'>{item.title}</Typography>
-  <Typography variant='p'>{item.price}</Typography>
-</Grid>
-  ))})
-}
-    </Grid>
+   <Filters products={items}/>
+  
     </>
 
   )

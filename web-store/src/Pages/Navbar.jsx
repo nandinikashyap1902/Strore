@@ -22,7 +22,7 @@ import { useNavigate } from 'react-router-dom';
 import { Tooltip } from '@mui/material';
 
 
-const pages = ['Home', 'Westernwear', 'Bags','Footwear','acessories'];
+const pages = ['Home', 'Western-wear', 'WomenBags','Footwear','acessories'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
