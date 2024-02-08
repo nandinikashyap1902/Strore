@@ -15,7 +15,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import { makeStyles } from '@mui/styles'
 import Grid from '@mui/material/Grid';
  import Card from '@mui/material/Card';
-import products from '../Data/products/products';
+//import products from '../Data/products/products';
 import {FormControl,InputLabel,Select,MenuItem,Input} from '@mui/material';
 // import { Margin } from '@mui/icons-material';
 // import Checkbox from '@mui/material';
@@ -35,7 +35,8 @@ btn:{
 }
 })
 
-function Filters() {
+function Filters(products) {
+  console.log(products)
   const classes = useStyles();
   const [age, setAge] = React.useState('');
   const handleChange = (event) => {
@@ -154,16 +155,15 @@ function Filters() {
 
 <Grid item width={1000}  m={4}>
 <Grid  container spacing={3}>
-    {products.map((item,i)=>{
-        return(
-(
-<Grid item key={i}  >
-  <Paper component='img' src={item.image} width="300px" key={item.id}></Paper>
-  <Typography variant='h6'>{item.title}</Typography>
-  <Typography variant='p'>{item.price}</Typography>
-</Grid>
-  ))})
+{products?.products.items.map((item, i) => (
+  <Grid item key={i}>
+    <Paper component='img' src={item.image} width="300px" key={item.id}></Paper>
+    <Typography variant='h6'>{item.title}</Typography>
+    <Typography variant='p'>{item.price}</Typography>
+  </Grid>
+))
 }
+
     </Grid>
 </Grid>
 

@@ -32,7 +32,7 @@ export const westernWear = [
     },
     {
       "id":92,
-      "imageUrl":
+      "image":
         "https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/1/h/g/m-pw333-purshottam-wala-original-imag8zf6ybkmhehy-bb.jpeg?q=70",
       "brand": "Daevish",
       "title": "Women Maxi Blue Dress",
@@ -63,7 +63,7 @@ export const westernWear = [
     },
     {
       "id":93,
-      "imageUrl":
+      "image":
         "https://rukminim1.flixcart.com/image/612/612/xif0q/dress/z/s/i/s-a1-zwerlon-original-imagn9uycxbhshur.jpeg?q=70",
       "brand": "ZWERLON",
       "title": "Women A-line Purple Dress",
@@ -94,7 +94,7 @@ export const westernWear = [
     },
     {
       "id":94,
-      "imageUrl":
+      "image":
         "https://rukminim1.flixcart.com/image/612/612/xif0q/dress/q/7/v/s-pwd322-purshottam-wala-original-imagm7ypaavduvnm.jpeg?q=70",
       "brand": "Purshottam Wala",
       "title": "Women Fit and Flare Black Dress",
@@ -126,7 +126,7 @@ export const westernWear = [
     
     {
       "id":95,
-      "imageUrl":
+      "image":
         "https://rukminim1.flixcart.com/image/612/612/xif0q/dress/e/a/p/s-pwd322-purshottam-wala-original-imagm6ywr7vz95sz.jpeg?q=70",
       "brand": "Purshottam Wala",
       "title": "Women Fit and Flare Blue Dress",
@@ -157,7 +157,7 @@ export const westernWear = [
     },
     {
       "id":96,
-      "imageUrl":
+      "image":
         "https://rukminim1.flixcart.com/image/612/612/kdlzte80/ethnic-set/p/f/q/l-3209-mint-02-neysa-original-imafuh85unfjczkd.jpeg?q=70",
       "brand": "NEYSA",
       "title": "Women Two Piece Dress Light Green Dress",
@@ -187,7 +187,7 @@ export const westernWear = [
         "Make a statement with this stylish purple A-line dress from ZWERLON. Made with high-quality fabric, this dress is perfect for any occasion."
     },
     {
-      "imageUrl":
+      "image":
         "https://rukminim1.flixcart.com/image/612/612/l0igvww0/dress/g/p/u/xl-wd-1001-leriya-fashion-original-imagc9zbhfhsy33w.jpeg?q=70",
       "brand": "Leriya Fashion",
       "title": "Women A-line Maroon Dress",

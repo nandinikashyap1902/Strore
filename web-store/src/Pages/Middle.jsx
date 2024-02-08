@@ -67,8 +67,8 @@ function Middle() {
 function showProductDetail(event,i){
   //console.log(i)
   
+  setLists(i)
   navigate('/productdetail')
-  setLists([i])
   
 }
 return (
@@ -149,7 +149,7 @@ return (
     </Grid>
    
     <Testimonials></Testimonials>
-    {list.length > 0 && <ProductDetail product={list} />}
+    {list? <ProductDetail detail={list} />:null}
     </>
   )
 }

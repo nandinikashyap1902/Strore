@@ -17,7 +17,8 @@ const styles = makeStyles({
       top:"3px"
   }
 })
-function ProductDetail() {
+function ProductDetail(detail) {
+  console.log(detail)
   const [age, setAge] = React.useState('');
   const classes = styles();
   const handleChange = (event) => {

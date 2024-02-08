@@ -1,8 +1,8 @@
 const Bags =[
      
         {
-            "id": 71,
-            "title": "Women Shoulder Bags",
+            id: 71,
+            title: "Women Shoulder Bags",
             "description": "LouisWill Women Shoulder Bags Long Clutches Cross Body Bags Phone Bags PU Leather Hand Bags Large Capacity Card Holders Zipper Coin Purses Fashion Crossbody Bags for Girls Ladies",
             "price": 46,
             "discountPercentage": 14.65,
@@ -11,7 +11,7 @@ const Bags =[
             "brand": "LouisWill",
             "category": "womens-bags",
             "thumbnail": "https://cdn.dummyjson.com/product-images/71/thumbnail.jpg",
-            "image": 
+            image: 
                 "https://cdn.dummyjson.com/product-images/71/1.jpg",
                 // "https://cdn.dummyjson.com/product-images/71/2.jpg",
                 // "https://cdn.dummyjson.com/product-images/71/3.webp",
@@ -29,7 +29,7 @@ const Bags =[
             "brand": "LouisWill",
             "category": "womens-bags",
             "thumbnail": "https://cdn.dummyjson.com/product-images/72/thumbnail.webp",
-            "images": 
+            "image": 
                 "https://cdn.dummyjson.com/product-images/72/1.jpg",
                 // "https://cdn.dummyjson.com/product-images/72/2.png",
                 // "https://cdn.dummyjson.com/product-images/72/3.webp",
@@ -48,7 +48,7 @@ const Bags =[
             "brand": "Bracelet",
             "category": "womens-bags",
             "thumbnail": "https://cdn.dummyjson.com/product-images/73/thumbnail.jpg",
-            "images": 
+            "image": 
                 "https://cdn.dummyjson.com/product-images/73/1.jpg",
                 // "https://cdn.dummyjson.com/product-images/73/2.webp",
                 // "https://cdn.dummyjson.com/product-images/73/3.jpg",
@@ -66,7 +66,7 @@ const Bags =[
             "brand": "Copenhagen Luxe",
             "category": "womens-bags",
             "thumbnail": "https://cdn.dummyjson.com/product-images/74/thumbnail.jpg",
-            "images": 
+            "image": 
                 "https://cdn.dummyjson.com/product-images/74/1.jpg",
                 // "https://cdn.dummyjson.com/product-images/74/2.jpg",
                 // "https://cdn.dummyjson.com/product-images/74/3.jpg",
@@ -85,7 +85,7 @@ const Bags =[
             "brand": "Steal Frame",
             "category": "womens-bags",
             "thumbnail": "https://cdn.dummyjson.com/product-images/75/thumbnail.jpg",
-            "images": 
+            "image": 
                 "https://cdn.dummyjson.com/product-images/75/1.jpg",
                 // "https://cdn.dummyjson.com/product-images/75/2.jpg",
                 // "https://cdn.dummyjson.com/product-images/75/3.jpg",
