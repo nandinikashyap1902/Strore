@@ -1,10 +1,12 @@
 import { Typography,Box,Grid,Paper, Card, CardMedia,Input,Button } from '@mui/material'
-import reviewer from '../Images/reviewer.webp'
+//import reviewer from '../Images/reviewer.webp'
 import { makeStyles } from '@mui/styles'
 import discover from '../Images/discover.jpg'
  import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookTwoToneIcon from '@mui/icons-material/FacebookTwoTone';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import Carousel from 'react-material-ui-carousel';
+import { NavigateNextTwoTone } from '@mui/icons-material';
 const styles = makeStyles({
     background:{
         background:"blue"
@@ -14,34 +16,51 @@ const styles = makeStyles({
         top:"3px"
     }
 })
-function Testimonials() {
+function Testimonials(reviews) {
+    //console.log(reviews)
     const classes = styles();
     return (
       <>
       {/* <Grid sx={{'position':'relative'}}> */}
+<Typography variant='h5' textAlign={'center'} mt={6}>Testimonials</Typography>
 
-    <Typography variant='h5'  mt={6} textAlign="center">Testimonials</Typography>
-    
-    <Grid container alignItems="center" justifyContent="center" mt={6} >
+
+<Carousel autoPlay slide  fullHeightHover={true} NextIcon={<NavigateNextTwoTone/>} PrevIcon={<NavigateNextTwoTone/>} indicators>
+
+
+
         
-        <Grid item  > 
-<Paper component="img" src={reviewer} width="90">
-    
-        </Paper>
+{
+    reviews?.reviews.map((item ,i)=>{
+        return(
+            <Grid container justifyContent="center" mt={2} spacing={2} key={i}>
+
+
+
+<Grid item > 
+            <Paper component="img" src={item.image} width="90"></Paper>   
+                    
+            </Grid>
+            <Grid item>
+
+            <Typography variant='p' >{item.comment}</Typography>
+                <Typography variant='h6'>{item.name}</Typography>
         
-       
-</Grid>
-<Grid item lg={9} xs={9}>
-<Typography variant='p' >A paragraph is a series of 
-        sentences that are organized and 
-        coherent, and are all related to a single topic. Almost every piece of writing you do that is longer than a few sentences should be organized into paragraphs.</Typography>
-    <Typography variant='h6'>lara den</Typography>
-    <Typography variant='h6'>Developer</Typography>    
+            </Grid>
 
+            
 </Grid>
-       
+        )
 
-    </Grid>
+    })
+}
+
+
+</Carousel>
+
+
+
+
    
      <Grid container mt={6}>
         <Grid item >

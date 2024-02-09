@@ -3,11 +3,12 @@ import Navbar from './Navbar'
 import { Box, Divider,Grid,Paper, Typography,InputLabel,MenuItem,FormControl,Select, Button,Card } from '@mui/material'
 import { Sheet } from '@mui/joy'
 import {Input} from '@mui/material'
-import products from '../Data/products/products'
+//import products from '../Data/products/products'
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookTwoToneIcon from '@mui/icons-material/FacebookTwoTone';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { makeStyles } from '@mui/styles'
+import { useLocation } from 'react-router-dom';
 const styles = makeStyles({
   background:{
       background:"blue"
@@ -17,8 +18,10 @@ const styles = makeStyles({
       top:"3px"
   }
 })
-function ProductDetail(detail) {
-  console.log(detail)
+function ProductDetail() {
+  const location = useLocation();
+  const { product } = location.state;
+  // console.log(product)
   const [age, setAge] = React.useState('');
   const classes = styles();
   const handleChange = (event) => {
@@ -34,26 +37,27 @@ function ProductDetail(detail) {
 <Divider></Divider>
 <Grid container m={4} sx={{alignItems:'center',justifyContent:'center'}} spacing={2}>
   <Grid item md={4} xs={12} sm={4} >
-<Paper component="img" src={products[0].image} width="440" ></Paper>
+<Paper component="img" src={product.image} width="440" ></Paper>
   </Grid>
+
   <Grid item md={4} xs={12} sm={4} >
     
     <Box  padding={2} sx={{width:400 }}>
-  <Typography variant='h5'>Class Aptent Taciti Sociosqu Ad Litora Torquent</Typography>
+  <Typography variant='h5'>{product.title}</Typography>
   <Divider></Divider>
-  <Typography variant='p'>Nunc At Diam Feugiat, Tristique Augue Sed, Tempor Metus. Praesent Lobortis, Turpis Sed Pellentesque Mattis, Felis Nibh Scelerisque Purus, Non Aliquet Neque Ipsum At Risus. Nunc Orci Massa, Lacinia Ut Ex Et, Sollicitudin Fermentum Justo. Sed Ac Neque Vehicula, Dignissim Nisl Feugiat, Vestibulum Nisi. In Ac Hendrerit Lacus, Eu Pretium Ligula.</Typography>
+  <Typography variant='p'>{product.description}</Typography>
 <Divider></Divider>
 <Typography>Rating</Typography>
 <Divider></Divider>
 
 <Box className="price">
 <label>Price:</label>
-<span>Rs. 1,820.00</span>
+<span>Rs.{product.price}</span>
 </Box>
 
 <Box className="Type">
 <label>Type:</label>
-<span>T-shirt</span>
+<span> {product.type}</span>
 </Box>
 
 <Box className="availablity">

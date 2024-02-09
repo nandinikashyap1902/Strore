@@ -8,13 +8,16 @@ import products from '../Data/products/products'
 import Testimonials from './Testimonials'
 // import cosmetic from '../Images/cosmetic.avif'
 import banner3 from '../Images/banner-3.webp'
-import { useNavigate } from 'react-router-dom'
+//import { useNavigate } from 'react-router-dom'
 import ProductDetail from './ProductDetail';
-import { useState } from 'react'
+//import { useState } from 'react'
 import { styled } from '@mui/material/styles';
 import  { tooltipClasses } from '@mui/material/Tooltip';
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 import FavoriteBorderTwoToneIcon from '@mui/icons-material/FavoriteBorderTwoTone';
+import testimonials from '../Data/products/Testimonials'
+import { useNavigate } from 'react-router-dom'
+
 // const useStyles = makeStyles({
 //   box:{
 //     width:'150px'
@@ -43,7 +46,8 @@ const longText =
 
 function Middle() {
   const navigate = useNavigate();
-  const[list,setLists] = useState([])
+  //const[list,setLists] = useState([])
+  //const history = useHistory();
   // const[productlists,setproductslists] = useState([])
   // const classes = useStyles();
 // useEffect(()=>{
@@ -64,12 +68,10 @@ function Middle() {
 // }
 // fetchdata();
 // },[])
-function showProductDetail(event,i){
+function showProductDetail(product){
   //console.log(i)
-  
-  setLists(i)
-  navigate('/productdetail')
-  
+  navigate('/productdetail',
+   { state: { product: product } });
 }
 return (
     <>
@@ -148,8 +150,8 @@ return (
 }
     </Grid>
    
-    <Testimonials></Testimonials>
-    {list? <ProductDetail detail={list} />:null}
+    <Testimonials reviews={testimonials}></Testimonials>
+    
     </>
   )
 }
