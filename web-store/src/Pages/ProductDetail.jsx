@@ -9,6 +9,7 @@ import FacebookTwoToneIcon from '@mui/icons-material/FacebookTwoTone';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { makeStyles } from '@mui/styles'
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 const styles = makeStyles({
   background:{
       background:"blue"
@@ -18,7 +19,9 @@ const styles = makeStyles({
       top:"3px"
   }
 })
+
 function ProductDetail() {
+  const navigate= useNavigate();
   const location = useLocation();
   const { product } = location.state;
   // console.log(product)
@@ -27,7 +30,9 @@ function ProductDetail() {
   const handleChange = (event) => {
     setAge(event.target.value);
   };
-
+  function addToCart(){
+navigate('/')
+  }
   return (
     <>
     <Navbar></Navbar>
@@ -85,7 +90,7 @@ function ProductDetail() {
       </FormControl>
 </span>
 </Box>
-<Button variant='contained'>Add To Cart</Button>
+<Button variant='contained'onClick={addToCart(product)}>Add To Cart</Button>
 <Button variant='contained'>Add To WishList</Button>
 
 </Box>

@@ -9,7 +9,7 @@ import Testimonials from './Testimonials'
 // import cosmetic from '../Images/cosmetic.avif'
 import banner3 from '../Images/banner-3.webp'
 //import { useNavigate } from 'react-router-dom'
-import ProductDetail from './ProductDetail';
+//import ProductDetail from './ProductDetail';
 //import { useState } from 'react'
 import { styled } from '@mui/material/styles';
 import  { tooltipClasses } from '@mui/material/Tooltip';
@@ -17,7 +17,7 @@ import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 import FavoriteBorderTwoToneIcon from '@mui/icons-material/FavoriteBorderTwoTone';
 import testimonials from '../Data/products/Testimonials'
 import { useNavigate } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 // const useStyles = makeStyles({
 //   box:{
 //     width:'150px'
@@ -27,47 +27,30 @@ import { useNavigate } from 'react-router-dom'
 //   //   top:'10'
 //   // }
 // })
-const CustomWidthTooltip = styled(({ className, ...props }) => (
-  <Tooltip {...props} classes={{ popper: className }} />
-))({
-  [`& .${tooltipClasses.tooltip}`]: {
-    maxWidth: 300,
-  },
-});
-const longText = 
 
-  <>
-<ShoppingCartTwoToneIcon/>
-<FavoriteBorderTwoToneIcon/>
-</>
-
-
-;
 
 function Middle() {
   const navigate = useNavigate();
-  //const[list,setLists] = useState([])
-  //const history = useHistory();
-  // const[productlists,setproductslists] = useState([])
-  // const classes = useStyles();
-// useEffect(()=>{
-//   const fetchdata = async()=>{
+  function Cart(){
+    navigate('/cart',{state:{product:product}})
+  }
+  function wishlist(){
+    
+  }
+  const CustomWidthTooltip = styled(({ className, ...props }) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+  ))({
+    [`& .${tooltipClasses.tooltip}`]: {
+      maxWidth: 300,
+    },
+  })
+  const longText = 
+    <>
+  <ShoppingCartTwoToneIcon onClick={Cart}/>
+  <FavoriteBorderTwoToneIcon onClick={wishlist}/>
+  </>
 //     const url = 'https://api.escuelajs.co/api/v1/products';
-//     const options = {
-//       method: 'GET',
-      
-//     };
-// try {
-// 	const response = await fetch(url, options);
-// 	const result = await response.json();
-//   // setproductslists(result)
-// 	console.log(result.slice(0,10));
-// } catch (error) {
-// 	console.error(error);
-// }
-// }
-// fetchdata();
-// },[])
+
 function showProductDetail(product){
   //console.log(i)
   navigate('/productdetail',
@@ -139,7 +122,7 @@ return (
         return(
 (
 <Grid item key={i}  >
-  <CustomWidthTooltip title={longText} >
+  <CustomWidthTooltip title={longText} sx={{cursor:'pointer'}} wishlistItem={item} cart={item}>
 
   <Paper component='img' src={item.image} width="300px" key={item.id} 
   onClick={()=>showProductDetail(item)} sx={{cursor:'pointer'}}>
