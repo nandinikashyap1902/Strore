@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import { Box, Divider,Grid,Paper, Typography,InputLabel,MenuItem,FormControl,Select, Button,Card } from '@mui/material'
 import { Sheet } from '@mui/joy'
@@ -10,6 +10,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import { makeStyles } from '@mui/styles'
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
+
 const styles = makeStyles({
   background:{
       background:"blue"
@@ -19,19 +20,24 @@ const styles = makeStyles({
       top:"3px"
   }
 })
-
 function ProductDetail() {
   const navigate= useNavigate();
   const location = useLocation();
   const { product } = location.state;
   // console.log(product)
+  //const[Item,setItem] = useState('');
   const [age, setAge] = React.useState('');
   const classes = styles();
   const handleChange = (event) => {
     setAge(event.target.value);
   };
-  function addToCart(){
-navigate('/')
+  function addToCart(product){
+    //setItem(product)
+    navigate('/cart',{state:{product:product}})
+  }
+  function addToWishlist(product){
+    //setItem(product)
+    navigate('/wishlists',{state:{product:product}})
   }
   return (
     <>
@@ -90,8 +96,8 @@ navigate('/')
       </FormControl>
 </span>
 </Box>
-<Button variant='contained'onClick={addToCart(product)}>Add To Cart</Button>
-<Button variant='contained'>Add To WishList</Button>
+<Button variant='contained'onClick={()=>addToCart(product)}>Add To Cart</Button>
+<Button variant='contained'onClick={()=>addToWishlist(product)}>Add To WishList</Button>
 
 </Box>
   </Grid>

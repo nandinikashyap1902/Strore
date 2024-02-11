@@ -1,11 +1,15 @@
-import { Grid,Box, Typography,Button } from '@mui/material'
+//import { Grid,Box, Typography,Button } from '@mui/material'
 import Navbar from './Navbar'
-
+import { useLocation } from 'react-router-dom'
+import { Grid, Typography,Paper,Box,Button,Card } from '@mui/material';
 function Wishlisting() {
+  const location = useLocation();
+  const {product} = location.state;
+  console.log(product)
   return (
     <>
     <Navbar></Navbar>
-   <Grid container sx={{position:'absolute',top:'90px', justifyContent:'center',alignItems:'center',overflow:'hidden'}}>
+   {/* <Grid container sx={{position:'absolute',top:'90px', justifyContent:'center',alignItems:'center',overflow:'hidden'}}>
 <Box 
      sx={{
       marginTop: 20,
@@ -19,6 +23,22 @@ function Wishlisting() {
 </Typography>
 <Button variant='contained'>LOGIN</Button>
 </Box>
+   </Grid> */}
+   <Grid container sx={{position:'relative',top:'90px', justifyContent:'center',alignItems:'center',overflow:'hidden',direction:'row'}}>
+<Typography>My wishlist</Typography>
+
+<Grid container m={6} >
+<Box>
+<Card>
+<Paper component='img' src={product.image} width={200}></Paper>
+<Typography>{product.title}</Typography>
+<Button>Move To Bag</Button>
+</Card>
+</Box>
+</Grid>
+
+
+
    </Grid>
     </>
   )

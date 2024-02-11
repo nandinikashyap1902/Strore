@@ -30,13 +30,7 @@ import { Link } from 'react-router-dom'
 
 
 function Middle() {
-  const navigate = useNavigate();
-  function Cart(){
-    navigate('/cart',{state:{product:product}})
-  }
-  function wishlist(){
-    
-  }
+const  navigate = useNavigate();
   const CustomWidthTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
   ))({
@@ -46,8 +40,8 @@ function Middle() {
   })
   const longText = 
     <>
-  <ShoppingCartTwoToneIcon onClick={Cart}/>
-  <FavoriteBorderTwoToneIcon onClick={wishlist}/>
+  <ShoppingCartTwoToneIcon />
+  <FavoriteBorderTwoToneIcon />
   </>
 //     const url = 'https://api.escuelajs.co/api/v1/products';
 
@@ -122,7 +116,7 @@ return (
         return(
 (
 <Grid item key={i}  >
-  <CustomWidthTooltip title={longText} sx={{cursor:'pointer'}} wishlistItem={item} cart={item}>
+  <CustomWidthTooltip title={longText} sx={{cursor:'pointer'}}>
 
   <Paper component='img' src={item.image} width="300px" key={item.id} 
   onClick={()=>showProductDetail(item)} sx={{cursor:'pointer'}}>
