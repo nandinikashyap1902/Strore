@@ -20,7 +20,7 @@ import { Outlet,Link } from 'react-router-dom';
 import {SearchTwoTone } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { Tooltip } from '@mui/material';
-
+import '../CSS/App.css'
 
 const pages = [ 'Western-wear', 'WomenBags','Footwear','acessories'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -39,7 +39,7 @@ function ResponsiveAppBar() {
   //const navigate = useNavigate();
   //const history = useHistory();
   return (
-    <AppBar color="transparent">
+    <AppBar sx={{background:'#E8D5B5'}}>
       <Container>
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -73,13 +73,13 @@ function ResponsiveAppBar() {
             >
               <MenuItem  onClick={handleCloseNavMenu} >
                   <Typography textAlign="center">
-                  <Link to='/'>Home</Link>  
+                  <Link to='/' style={{textDecoration:'none',color:'#FFFADE'}}>Home</Link>  
                     </Typography>
                 </MenuItem> 
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu} >
                   <Typography textAlign="center">
-                  <Link to={`/${page}`}>{page}</Link>  
+                  <Link to={`/${page}`} style={{textDecoration:'none',color:'#FFFADE'}}>{page}</Link>  
                     </Typography>
                 </MenuItem>
               ))}
@@ -88,7 +88,7 @@ function ResponsiveAppBar() {
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button sx={{ my: 2, color: 'black', display: 'block',ml:3 }}>
-            <Link to='/'>
+            <Link to='/' style={{textDecoration:'none',color:'#FFFADE'}}>
             Home
             </Link> 
             </Button>
@@ -98,7 +98,7 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block',ml:3 }}
               >
-             <Link to={`/${page}`}>{page}</Link>  
+             <Link to={`/${page}`} style={{textDecoration:'none',color:'#FFFADE'}}>{page}</Link>  
               </Button>
             ))}
           </Box>

@@ -53,7 +53,7 @@ function showProductDetail(product){
 return (
     <>
     
-    <Grid container  spacing={2} ml={4}  mr={4} mt={4}>
+    <Grid container  spacing={2} ml={4}  mr={4} mt={4} sx={{background:'#FFFADE'}}>
       <Grid item >
    
       <Typography variant='h6'>
@@ -76,7 +76,7 @@ return (
         </Grid>
       </Grid>
           
-    <Grid container spacing={4}  ml={4} mt={3} mr={4}>
+    <Grid container spacing={4}  ml={4} mt={3} mr={4} >
 <Grid item>
   <Paper component="img" src={img4} width={400}>
   </Paper>
