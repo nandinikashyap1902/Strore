@@ -20,12 +20,24 @@ import { Outlet,Link } from 'react-router-dom';
 import {SearchTwoTone } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { Tooltip } from '@mui/material';
-import '../CSS/App.css'
-
+import '../CSS/Navbar.css'
+import { makeStyles } from '@mui/styles';
 const pages = [ 'Western-wear', 'WomenBags','Footwear','acessories'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const boxSX = {
+  "&:hover": {
+    border: "1px solid #00FF00",
+    color: 'gray',
+    backgroundColor: '#E0EBDC'
+  },
+};
+const useStyles = makeStyles({
+link:{
 
+}
+})
 function ResponsiveAppBar() {
+  const classes = useStyles();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   
   const handleOpenNavMenu = (event) => {
@@ -39,7 +51,7 @@ function ResponsiveAppBar() {
   //const navigate = useNavigate();
   //const history = useHistory();
   return (
-    <AppBar sx={{background:'#E8D5B5'}}>
+    <AppBar id="AppBar" color="transparent">
       <Container>
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -71,15 +83,15 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              <MenuItem  onClick={handleCloseNavMenu} >
+              <MenuItem  onClick={handleCloseNavMenu}  sx={boxSX}>
                   <Typography textAlign="center">
-                  <Link to='/' style={{textDecoration:'none',color:'#FFFADE'}}>Home</Link>  
+                  <Link to='/' >Home</Link>  
                     </Typography>
                 </MenuItem> 
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu} >
                   <Typography textAlign="center">
-                  <Link to={`/${page}`} style={{textDecoration:'none',color:'#FFFADE'}}>{page}</Link>  
+                  <Link to={`/${page}`} style={{textDecoration:'none'}}>{page}</Link>  
                     </Typography>
                 </MenuItem>
               ))}
@@ -88,7 +100,7 @@ function ResponsiveAppBar() {
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button sx={{ my: 2, color: 'black', display: 'block',ml:3 }}>
-            <Link to='/' style={{textDecoration:'none',color:'#FFFADE'}}>
+            <Link to='/' style={{textDecoration:'none'}}>
             Home
             </Link> 
             </Button>
@@ -98,7 +110,7 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block',ml:3 }}
               >
-             <Link to={`/${page}`} style={{textDecoration:'none',color:'#FFFADE'}}>{page}</Link>  
+             <Link to={`/${page}`} style={{textDecoration:'none'}}>{page}</Link>  
               </Button>
             ))}
           </Box>

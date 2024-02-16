@@ -9,6 +9,7 @@ import img from '../Images/slider-1.webp';
 import Middle from './Middle';
 import CardGiftcardTwoToneIcon from '@mui/icons-material/CardGiftcardTwoTone';
 import { useNavigate } from 'react-router-dom';
+import '../CSS/App.css'
 //import SignIn from './SignIn';
 const useStyles = makeStyles({
   // card: {
@@ -28,6 +29,11 @@ const useStyles = makeStyles({
   positioning:{
     margin:'20px',
     display:"flex"
+  },
+  list:{
+    color:'#648558',
+    border:'3px dotted#E0EBDC',
+    
   }
 });
 function Home() {
@@ -53,16 +59,16 @@ function Home() {
         </Grid>
       {/* </Grid> */}
 
-      <Grid container sx={{margin:'20px'}}>
-        <Grid item md={3} xs={12} sm={6} >
-         <ListItemButton style={{'border':'12px'}}>
+      <Grid container mt={5}>
+        <Grid item md={3} xs={12} sm={6} className={classes.list}>
+         <ListItemButton  >
           <ListItemIcon>
 <SendTwoToneIcon/>
           </ListItemIcon>
           <ListItemText primary="Free Shipping Worldwide" />
          </ListItemButton>
 </Grid>
-<Grid item md={3} xs={12} sm={6}>
+<Grid item md={3} xs={12} sm={6} className={classes.list}>
          <ListItemButton>
           <ListItemIcon>
 <SupportAgentTwoToneIcon/>
@@ -71,7 +77,7 @@ function Home() {
          </ListItemButton>
 </Grid>
 
-<Grid item md={3} xs={12} sm={6}>
+<Grid item md={3} xs={12} sm={6} className={classes.list}>
          <ListItemButton>
           <ListItemIcon>
 <CurrencyRupeeTwoToneIcon/>
@@ -80,7 +86,7 @@ function Home() {
          </ListItemButton>
 </Grid>
 
-<Grid item md={3} xs={12} sm={6}>
+<Grid item md={3} xs={12} sm={6} className={classes.list}>
          <ListItemButton>
           <ListItemIcon>
 <CardGiftcardTwoToneIcon/>

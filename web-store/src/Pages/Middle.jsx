@@ -1,4 +1,4 @@
-import { Grid,Paper,Button,Box, Typography, Tooltip} from '@mui/material'
+import { Grid,Paper,Button,Box, Typography, Tooltip, Divider} from '@mui/material'
 import img from '../Images/banner-1.webp'
 import img1 from "../Images/banner-2.webp"
 
@@ -18,18 +18,25 @@ import FavoriteBorderTwoToneIcon from '@mui/icons-material/FavoriteBorderTwoTone
 import testimonials from '../Data/products/Testimonials'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-// const useStyles = makeStyles({
-//   box:{
-//     width:'150px'
-//   },
-//   // gridview:{
-//   //   position:'relative',
-//   //   top:'10'
-//   // }
-// })
+ import  '../CSS/Navbar.css'
+ import { makeStyles } from '@mui/styles'
+const useStyles = makeStyles({
+  // box:{
+  //   width:'150px'
+  // },
+  // gridview:{
+  //   position:'relative',
+  //   top:'10'
+  // }
+  btn:{
+    color:'#648558',
+border:'3px solid#E0EBDC'
+  }
+})
 
 
 function Middle() {
+  const classes = useStyles();
 const  navigate = useNavigate();
   const CustomWidthTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
@@ -53,32 +60,34 @@ function showProductDetail(product){
 return (
     <>
     
-    <Grid container  spacing={2} ml={4}  mr={4} mt={4} sx={{background:'#FFFADE'}}>
-      <Grid item >
+    
+
+    <Grid container  spacing={4} m={5}>
+      <Grid item>
    
-      <Typography variant='h6'>
+      <Typography variant='h6' color='#648558' sx={{fontSize:'1.5rem',fontWeight:'bold'}}>
       Introducing Fashion Collection
       </Typography>
-        <Typography variant='p'>
+        <Typography variant='p'color='#648558'>
         We are a global housewares product design company.
         </Typography> 
         <br></br>
-<Button >Shop Now</Button>
-     
+ <Button variant='outlined' id="btn">Shop Now</Button> 
+     {/* <Typography variant="p">shop</Typography> */}
       </Grid>
 
 <Grid item >
-<Paper component="img" src={img}width={300} ></Paper>
+<Paper component="img" src={img}width={300} id="img1"></Paper>
         </Grid>
 
-        <Grid item >
-        <Paper component="img" src={img1} width={400}></Paper>
+        <Grid item>
+        <Paper component="img" src={img1} width={600}></Paper>
         </Grid>
       </Grid>
           
-    <Grid container spacing={4}  ml={4} mt={3} mr={4} >
+    <Grid container spacing={4} m={5}>
 <Grid item>
-  <Paper component="img" src={img4} width={400}>
+  <Paper component="img" src={img4} width={600}>
   </Paper>
 </Grid>
 <Grid item>
@@ -88,19 +97,20 @@ return (
 </Grid>
 <Grid item >
 <Box >
-      <Typography variant='h6'>
+      <Typography variant='h6'color='#648558' sx={{fontSize:'1.5rem',fontWeight:'bold'}}>
       Introducing Fashion Collection
       </Typography>
-        <Typography variant='p'>
+        <Typography variant='p' color='#648558'>
         We are a global housewares product design company.
         </Typography> 
         <br></br>
-<Button >Shop Now</Button>
+<Button className={classes.btn}>Shop Now</Button>
       </Box>
       </Grid>
     </Grid>
-    <Typography variant='h5' textAlign='center'mt={3}>Top Product</Typography>
-    <Grid container justifyContent="center" mt={3}>
+    <Typography variant='h5' textAlign='center'mt={3} sx={{fontSize:'1.5rem',fontWeight:'bold',color:'#648558'}}>Top Product</Typography>
+    <Divider></Divider>
+    {/* <Grid container justifyContent="center" mt={3}>
       <Grid item>
 <Button variant='container'>Feature</Button>
       </Grid>
@@ -110,7 +120,7 @@ return (
       <Grid item>
 <Button>BestSeller</Button>
       </Grid>
-    </Grid>
+    </Grid> */}
     <Grid container spacing={3} justifyContent="center" mt={3}>
       {products.map((item,i)=>{
         return(
