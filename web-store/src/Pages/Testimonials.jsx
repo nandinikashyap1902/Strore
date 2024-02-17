@@ -24,20 +24,21 @@ function Testimonials(reviews) {
       {/* <Grid sx={{'position':'relative'}}> */}
 <Typography variant='h5' textAlign={'center'} mt={6}>Testimonials</Typography>
 
-
-<Carousel autoPlay slide  fullHeightHover={true} NextIcon={<NavigateNextTwoTone/>} PrevIcon={<NavigateNextTwoTone/>} indicators>
-
+<Grid sx={{border:'3px solid #249268',position:'relative',left:'20%',right:'0'}} maxWidth='500px' >
 
 
-        
+<Carousel autoPlay slide  fullHeightHover={true} NextIcon={<NavigateNextTwoTone/>} PrevIcon={<NavigateNextTwoTone/>} indicators >     
 {
     reviews?.reviews.map((item ,i)=>{
         return(
-            <Grid container justifyContent="center" mt={2} spacing={2} key={i}>
+            
 
+            <Grid container  mt={2} spacing={2}  gap={4} key={i} justifyContent='center'>
+                
 
-
+    
 <Grid item > 
+
             <Paper component="img" src={item.image} width="90"></Paper>   
                     
             </Grid>
@@ -46,23 +47,16 @@ function Testimonials(reviews) {
             <Typography variant='p' >{item.comment}</Typography>
                 <Typography variant='h6'>{item.name}</Typography>
         
-            </Grid>
+            </Grid>  
+</Grid>   
 
-            
-</Grid>
         )
-
     })
 }
-
-
 </Carousel>
 
-
-
-
-   
-     <Grid container mt={6}>
+</Grid>
+<Grid container mt={6}>
         <Grid item >
             <Box ml={0} mr={0}>
             <Card>
@@ -71,11 +65,7 @@ function Testimonials(reviews) {
             </Box>
         </Grid>
      </Grid>
-
-
-
-
-     <Grid container mt={6} ml={1}>
+<Grid container mt={6} ml={1}>
         <Grid item >
                    <TwitterIcon/> 
           </Grid>
@@ -99,13 +89,7 @@ function Testimonials(reviews) {
 <Button variant="contained"  className={classes.btn}>Subscribe</Button>
            
 </Grid>
-         
-        
-            
-
-       
-          
-      {/* </Grid> */}
+{/* </Grid> */}
     </>
   )
 }

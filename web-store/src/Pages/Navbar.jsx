@@ -26,14 +26,16 @@ const pages = [ 'Western-wear', 'WomenBags','Footwear','acessories'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const boxSX = {
   "&:hover": {
-    border: "1px solid #00FF00",
-    color: 'gray',
-    backgroundColor: '#E0EBDC'
+    // border: "1px solid #00FF00",
+     color: 'red',
+    //  textDecoration:'none',
+    background: '#E0EBDC'
   },
 };
 const useStyles = makeStyles({
 link:{
-
+  textDecoration:'none',
+  color:'#648558'
 }
 })
 function ResponsiveAppBar() {
@@ -82,16 +84,16 @@ function ResponsiveAppBar() {
               sx={{
                 display: { xs: 'block', md: 'none' },
               }}
-            >
-              <MenuItem  onClick={handleCloseNavMenu}  sx={boxSX}>
+             >
+              <MenuItem  onClick={handleCloseNavMenu} >
                   <Typography textAlign="center">
-                  <Link to='/' >Home</Link>  
+                  <Link to='/' className={classes.link} >Home</Link>  
                     </Typography>
                 </MenuItem> 
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu} >
                   <Typography textAlign="center">
-                  <Link to={`/${page}`} style={{textDecoration:'none'}}>{page}</Link>  
+                  <Link to={`/${page}`} className={classes.link}>{page}</Link>  
                     </Typography>
                 </MenuItem>
               ))}
@@ -99,8 +101,8 @@ function ResponsiveAppBar() {
           </Box>
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Button sx={{ my: 2, color: 'black', display: 'block',ml:3 }}>
-            <Link to='/' style={{textDecoration:'none'}}>
+            <Button sx={{ my: 2, color: 'black', display: 'block',ml:3 }} >
+            <Link to='/' className={classes.link}>
             Home
             </Link> 
             </Button>
@@ -109,8 +111,8 @@ function ResponsiveAppBar() {
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block',ml:3 }}
-              >
-             <Link to={`/${page}`} style={{textDecoration:'none'}}>{page}</Link>  
+                >
+             <Link to={`/${page}`} className={classes.link}>{page}</Link>  
               </Button>
             ))}
           </Box>
