@@ -30,7 +30,8 @@ const useStyles = makeStyles({
   // }
   btn:{
     color:'#648558',
-border:'3px solid#E0EBDC'
+border:'3px solid #E0EBDC',
+fontFamily:'sans-serif'
   }
 })
 
@@ -72,7 +73,7 @@ return (
         We are a global housewares product design company.
         </Typography> 
         <br></br>
- <Button variant='outlined' id="btn">Shop Now</Button> 
+ <Button variant='outlined' >Shop Now</Button> 
      {/* <Typography variant="p">shop</Typography> */}
       </Grid>
 
@@ -100,11 +101,11 @@ return (
       <Typography variant='h6'color='#648558' sx={{fontSize:'1.5rem',fontWeight:'bold'}}>
       Introducing Fashion Collection
       </Typography>
-        <Typography variant='p' color='#648558'>
+        <Typography variant='p' color='#648558' >
         We are a global housewares product design company.
         </Typography> 
         <br></br>
-<Button className={classes.btn}>Shop Now</Button>
+<Button className={classes.btn} variant='outlined'>Shop Now</Button>
       </Box>
       </Grid>
     </Grid>

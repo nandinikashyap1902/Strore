@@ -21,27 +21,54 @@ import {SearchTwoTone } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { Tooltip } from '@mui/material';
 import '../CSS/Navbar.css'
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
 import { makeStyles } from '@mui/styles';
+import Input from '@mui/material/Input';
+import accessory from '../Data/products/Accessories';
+import Bags from '../Data/products/Bags';
+import footwear from '../Data/products/Footwear';
+import { westernWear } from '../Data/products/westernWear';
+const allProducts =[...accessory,...Bags,...footwear,...westernWear];
+//console.log(allProducts)
 const pages = [ 'Western-wear', 'WomenBags','Footwear','acessories'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const boxSX = {
   "&:hover": {
-    // border: "1px solid #00FF00",
-     color: 'red',
-    //  textDecoration:'none',
-    background: '#E0EBDC'
+    background:'#249268',
+    color:'#E0EBDC'
   },
 };
 const useStyles = makeStyles({
 link:{
   textDecoration:'none',
-  color:'#648558'
+  color:'#648558',
+  // "&:hover": {
+  //   background:'#249268',
+  //   color:'#E0EBDC'
+  // },
 }
 })
 function ResponsiveAppBar() {
   const classes = useStyles();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  
+  const [searchQuery, setSearchQuery] = React.useState('');
+  const [searchResults, setSearchResults] = React.useState([]);
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+        if (query.trim() === '') {
+            setSearchResults([]); // Clear search results if query is empty
+        } else {
+            const filteredResults = allProducts.filter(product =>
+                product.title.toLowerCase().includes(query.toLowerCase())
+            );
+            setSearchResults(filteredResults.slice(0, 6)); // Limit to first 6 items
+        }
+};
+const handleResultClick = (productId) => {
+  // Redirect to the product page using React Router or window.location
+  console.log(`Redirecting to product with ID: ${productId}`);
+};
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -85,15 +112,15 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'none' },
               }}
              >
-              <MenuItem  onClick={handleCloseNavMenu} >
+              <MenuItem  onClick={handleCloseNavMenu} className={classes.link} >
                   <Typography textAlign="center">
-                  <Link to='/' className={classes.link} >Home</Link>  
+                  <Link to='/' >Home</Link>  
                     </Typography>
                 </MenuItem> 
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu} >
+                <MenuItem key={page} onClick={handleCloseNavMenu} className={classes.link}>
                   <Typography textAlign="center">
-                  <Link to={`/${page}`} className={classes.link}>{page}</Link>  
+                  <Link to={`/${page}`} >{page}</Link>  
                     </Typography>
                 </MenuItem>
               ))}
@@ -101,8 +128,8 @@ function ResponsiveAppBar() {
           </Box>
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Button sx={{ my: 2, color: 'black', display: 'block',ml:3 }} >
-            <Link to='/' className={classes.link}>
+            <Button sx={{ my: 2, display: 'block',ml:3 }} className={classes.link}>
+            <Link to='/' >
             Home
             </Link> 
             </Button>
@@ -110,13 +137,28 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block',ml:3 }}
-                >
-             <Link to={`/${page}`} className={classes.link}>{page}</Link>  
+                sx={{ my: 2, display: 'block',ml:3 }}
+                className={classes.link}>
+             <Link to={`/${page}`} >{page}</Link>  
               </Button>
             ))}
           </Box>
           
+          <Input onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    handleSearch(e.target.value);
+                }}
+                value={searchQuery}></Input>
+                 {searchResults.map((product, index) => (
+                    <ListItem
+                        Buttonbase
+                        
+                        key={index}
+                        onClick={() => handleResultClick(product.id)}
+                    >
+                        <ListItemText primary={product.title} />
+                    </ListItem>
+                ))}
               <IconButton>
                <SearchTwoTone/> 
               </IconButton>

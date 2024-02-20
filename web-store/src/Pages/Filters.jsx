@@ -24,6 +24,7 @@ import PropTypes from 'prop-types';
 import { Sheet } from '@mui/joy';
 import { Link } from 'react-router-dom';
 import { CheckBox } from '@mui/icons-material';
+import Footer from './Footer';
 
 const useStyles = makeStyles({
 box:{
@@ -170,30 +171,7 @@ function Filters(products) {
 
 </Grid>
 <Divider></Divider>
-<Grid container mt={6} ml={1}>
-        <Grid item >
-                   <TwitterIcon/> 
-          </Grid>
-                
-                <Grid item>
-
-                   <FacebookTwoToneIcon/>
-                </Grid>
-            
-            <Grid item>
-
-                   <InstagramIcon/>
-            </Grid>
-          </Grid>
-          <Grid  ml={1}>
-
-<Typography variant='h6'>Newsletter</Typography>
-<Typography variant='p'>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</Typography>
-<br></br>
-<Input placeholder='Email address'></Input>
-<Button variant="contained"  className={classes.btn}>Subscribe</Button>
-           
-</Grid>
+<Footer></Footer>
 </Box> 
     </>
   )

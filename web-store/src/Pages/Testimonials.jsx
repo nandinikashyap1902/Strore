@@ -1,61 +1,54 @@
-import { Typography,Box,Grid,Paper, Card, CardMedia,Input,Button } from '@mui/material'
+import { Typography,Box,Grid,Paper, Card, CardMedia } from '@mui/material'
 //import reviewer from '../Images/reviewer.webp'
-import { makeStyles } from '@mui/styles'
+//import { makeStyles } from '@mui/styles'
 import discover from '../Images/discover.jpg'
- import TwitterIcon from '@mui/icons-material/Twitter';
-import FacebookTwoToneIcon from '@mui/icons-material/FacebookTwoTone';
-import InstagramIcon from '@mui/icons-material/Instagram';
+ import Footer from './Footer';
 import Carousel from 'react-material-ui-carousel';
-import { NavigateNextTwoTone } from '@mui/icons-material';
-const styles = makeStyles({
-    background:{
-        background:"blue"
-    },
-    btn:{
-        position:"relative",
-        top:"3px"
-    }
-})
+import { NavigateNextTwoTone,NavigateBeforeTwoTone } from '@mui/icons-material';
+// const boxSX = {
+//     "&:hover": {
+//         background:'#249268',
+//         color:'#E0EBDC'
+//     },
+//   };
+// const styles = makeStyles({
+    
+//     btn:{
+//         position:"relative",
+//         top:"5px",
+//         color:'#648558',
+// border:'4px solid #E0EBDC'
+//     },
+//     icon:{
+//         color:'#648558'
+//     }
+// })
 function Testimonials(reviews) {
     //console.log(reviews)
-    const classes = styles();
+    // const classes = styles();
     return (
       <>
       {/* <Grid sx={{'position':'relative'}}> */}
-<Typography variant='h5' textAlign={'center'} mt={6}>Testimonials</Typography>
-
-<Grid sx={{border:'3px solid #249268',position:'relative',left:'20%',right:'0'}} maxWidth='500px' >
-
-
-<Carousel autoPlay slide  fullHeightHover={true} NextIcon={<NavigateNextTwoTone/>} PrevIcon={<NavigateNextTwoTone/>} indicators >     
+      
+<Typography variant='h5' textAlign={'center'} mt={5} color="#648558">Testimonials</Typography>
+{/* <Box sx={{border:'2px solid #E0EBDC'}}> */}
+<Grid sx={{border:'2px solid #E0EBDC'}} maxWidth='500px' m="auto">
+<Carousel autoPlay slide  fullHeightHover={true} NextIcon={<NavigateNextTwoTone/>} PrevIcon={<NavigateBeforeTwoTone/>} indicators >     
 {
     reviews?.reviews.map((item ,i)=>{
         return(
-            
-
-            <Grid container  mt={2} spacing={2}  gap={4} key={i} justifyContent='center'>
-                
-
-    
-<Grid item > 
-
-            <Paper component="img" src={item.image} width="90"></Paper>   
-                    
-            </Grid>
+            <Grid container  mt={2} spacing={2}  gap={10} key={i} justifyContent='center'>
+                <Grid item > 
+                <Paper component="img" src={item.image} width="90"></Paper>   
+                    </Grid>
             <Grid item>
-
+<Typography variant='h6'>{item.name}</Typography>
             <Typography variant='p' >{item.comment}</Typography>
-                <Typography variant='h6'>{item.name}</Typography>
-        
-            </Grid>  
-</Grid>   
-
-        )
-    })
-}
+        </Grid>  
+</Grid>)})}
 </Carousel>
-
 </Grid>
+{/* </Box> */}
 <Grid container mt={6}>
         <Grid item >
             <Box ml={0} mr={0}>
@@ -65,32 +58,10 @@ function Testimonials(reviews) {
             </Box>
         </Grid>
      </Grid>
-<Grid container mt={6} ml={1}>
-        <Grid item >
-                   <TwitterIcon/> 
-          </Grid>
-                
-                <Grid item>
-
-                   <FacebookTwoToneIcon/>
-                </Grid>
-            
-            <Grid item>
-
-                   <InstagramIcon/>
-            </Grid>
-          </Grid>
-          <Grid  ml={1}>
-
-<Typography variant='h6'>Newsletter</Typography>
-<Typography variant='p'>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</Typography>
-<br></br>
-<Input placeholder='Email address'></Input>
-<Button variant="contained"  className={classes.btn}>Subscribe</Button>
-           
-</Grid>
+<Footer></Footer>
 {/* </Grid> */}
-    </>
+
+</>
   )
 }
 
