@@ -12,6 +12,7 @@ const footwear =[
                 "brand": "IELGY fashion",
                 "category": "womens-shoes",
                 "thumbnail": "https://cdn.dummyjson.com/product-images/46/thumbnail.jpg",
+                "color":'white',
                 "image": 
                     "https://cdn.dummyjson.com/product-images/46/1.webp",
                     // "https://cdn.dummyjson.com/product-images/46/2.jpg",
@@ -31,6 +32,7 @@ const footwear =[
                 "brand": "Synthetic Leather",
                 "category": "womens-shoes",
                 "thumbnail": "https://cdn.dummyjson.com/product-images/47/thumbnail.jpeg",
+                "color":'white',
                 "image": 
                     "https://cdn.dummyjson.com/product-images/47/1.jpg",
                     // "https://cdn.dummyjson.com/product-images/47/2.jpg",
@@ -48,6 +50,7 @@ const footwear =[
                 "stock": 25,
                 "brand": "Sandals Flip Flops",
                 "category": "womens-shoes",
+                "color":'pink',
                 "thumbnail": "https://cdn.dummyjson.com/product-images/48/thumbnail.jpg",
                 "image": 
                     "https://cdn.dummyjson.com/product-images/48/1.jpg",
@@ -67,6 +70,7 @@ const footwear =[
                 "stock": 107,
                 "brand": "Maasai Sandals",
                 "category": "womens-shoes",
+                "color":'Black',
                 "thumbnail": "https://cdn.dummyjson.com/product-images/49/thumbnail.jpg",
                 "image": 
                     "https://cdn.dummyjson.com/product-images/49/1.jpg",
@@ -84,6 +88,7 @@ const footwear =[
                 "rating": 4.33,
                 "stock": 46,
                 "brand": "Arrivals Genuine",
+                "color":'Black',
                 "category": "womens-shoes",
                 "thumbnail": "https://cdn.dummyjson.com/product-images/50/thumbnail.jpg",
                 "image": 

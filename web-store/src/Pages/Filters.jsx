@@ -9,9 +9,7 @@ import Navbar from './Navbar'
 import {Checkbox, Typography,Button, Divider } from '@mui/material';
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
-import TwitterIcon from '@mui/icons-material/Twitter';
-import FacebookTwoToneIcon from '@mui/icons-material/FacebookTwoTone';
-import InstagramIcon from '@mui/icons-material/Instagram';
+
 import { makeStyles } from '@mui/styles'
 import Grid from '@mui/material/Grid';
  import Card from '@mui/material/Card';
@@ -25,7 +23,9 @@ import { Sheet } from '@mui/joy';
 import { Link } from 'react-router-dom';
 import { CheckBox } from '@mui/icons-material';
 import Footer from './Footer';
-
+const colors =['yellow','Red','Green','Blue','Black','white','pink'];
+const price =['1000-1500','2000-3000','3000-4000']
+const size =['S','M','L']
 const useStyles = makeStyles({
 box:{
 display:'grid'
@@ -37,11 +37,31 @@ btn:{
 })
 
 function Filters(products) {
-  console.log(products)
+  //console.log(products)
   const classes = useStyles();
-  const [age, setAge] = React.useState('');
+  const [sortBy, setsorted] = React.useState('');
+  const [productlist, setProductlist] = React.useState([]);
+  const [displayedProducts, setDisplayedProducts] = useState(products.products.items);
   const handleChange = (event) => {
-    setAge(event.target.value);
+    const value = event.target.value
+    let sortedProducts = [];
+    setsorted(value);
+    switch (value) {
+      case '10':
+        sortedProducts = [...products].sort((a, b) => a.price - b.price);
+        break;
+      case '20':
+        sortedProducts = [...products].sort((a, b) => b.price - a.price);
+        break;
+      case '30':
+        // You would need to define the logic for sorting by popularity
+        // For example, if products have a popularity property, you can sort based on that
+        sortedProducts = [...products].sort((a, b) => a.popularity - b.popularity);
+        break;
+      default:
+        sortedProducts = products;
+    }
+    setDisplayedProducts(sortedProducts);
   };
   
   return (
@@ -54,17 +74,17 @@ function Filters(products) {
 <Typography variant='p'>Filters</Typography>
 <span>
   <FormControl sx={{float:'right'}}>
-        <InputLabel id="demo-simple-select-label" >Age</InputLabel>
+        <InputLabel id="demo-simple-select-label" >Sort BY:</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={age}
-          label="Age"
+          value={sortBy}
+          label="Recommeded"
           onChange={handleChange}
-         sx={{width:80}}>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+         sx={{width:100}}>
+          <MenuItem value={10}>Price,low to high</MenuItem>
+          <MenuItem value={20}>Price,high to low</MenuItem>
+          <MenuItem value={30}>Popular</MenuItem>
         </Select>
       </FormControl></span>
 </Box>
@@ -75,96 +95,87 @@ function Filters(products) {
 <Box className='color' m={3} >
 
 <Card sx={{width:'300px'}} >
-  <label>COLOR</label>
-<List>
-  <ListItem sx={{padding:'0'}}>
+  <label>Color</label>
+  {
+    colors.map((i,item)=>{
+     // console.log(item)
+      return(
+        <List key={i} sx={{padding:'0'}} >
+<ListItem sx={{padding:'0'}} >
     <Checkbox></Checkbox>
     <Link>
-    <span>YELLOW</span>
+    <span>{colors[item]}</span>
     </Link>
   </ListItem>
-  <ListItem sx={{padding:'0'}}>
-    <Checkbox></Checkbox>
-    <Link>
-    <span>YELLOW</span>
-    </Link>
-  </ListItem>
-
-  <ListItem sx={{padding:'0'}}>
-    <CheckBox></CheckBox>
-    <Link>
-    <span>YELLOW</span>
-    </Link>
-  </ListItem>
-</List>
+        </List>
+      )
+    })
+  }
 </Card>
  
   
 <Card sx={{width:'300px'}}>
-  <label>COLOR</label>
-<List sx={{padding:'0'}}>
-  <ListItem>
+  <label>Price</label>
+
+  <List>
+  {
+    price.map((i,item)=>{
+     // console.log(item)
+      return(
+        <List key={i} sx={{padding:'0'}} >
+<ListItem sx={{padding:'0'}} >
     <Checkbox></Checkbox>
     <Link>
-    <span>YELLOW</span>
+    <span>{price[item]}</span>
     </Link>
   </ListItem>
-
-  <ListItem>
-    <Checkbox></Checkbox>
-    <Link>
-    <span>YELLOW</span>
-    </Link>
-  </ListItem>
-  
-  <ListItem>
-    <CheckBox></CheckBox>
-    <Link>
-    <span>YELLOW</span>
-    </Link>
-  </ListItem>
-
+        </List>
+      )
+    })
+  }
 </List>
 </Card>
   
 <Card sx={{width:'300px'}}>
-  <label>COLOR</label>
-<List>
-  <ListItem>
-    <Checkbox></Checkbox>
-    <Link>
-    <span>YELLOW</span>
-    </Link>
-  </ListItem>
-  <ListItem>
-    <Checkbox></Checkbox>
-    <Link>
-    <span>YELLOW</span>
-    </Link>
-  </ListItem>
+<label>Size</label>
 
-  <ListItem>
-    <CheckBox></CheckBox>
-    <Link>
-    <span>YELLOW</span>
-    </Link>
-  </ListItem>
+<List>
+{
+  size.map((i,item)=>{
+   // console.log(item)
+    return(
+      <List key={i} sx={{padding:'0'}} >
+<ListItem sx={{padding:'0'}} >
+  <Checkbox></Checkbox>
+  <Link>
+  <span>{size[item]}</span>
+  </Link>
+</ListItem>
+      </List>
+    )
+  })
+}
 </List>
 </Card>
 </Box>
 </Grid>
 
 <Grid item width={1000}  m={4}>
-<Grid  container spacing={3}>
-{products?.products.items.map((item, i) => (
-  <Grid item key={i}>
-    <Paper component='img' src={item.image} width="300px" key={item.id}></Paper>
-    <Typography variant='h6'>{item.title}</Typography>
-    <Typography variant='p'>{item.price}</Typography>
-  </Grid>
-))
-}
-
+<Grid container spacing={3}>
+       {sortBy !== '' && productlist.length > 0 && productlist.map((item, i) => (
+        <Grid item key={i}>
+          <Paper component='img' src={item.image} width="300px" key={item.id} />
+          <Typography variant='h6'>{item.title}</Typography>
+          <Typography variant='body1'>{item.price}</Typography>
+        </Grid>
+      ))} 
+      {products?.products.items.map((item, i) => (
+        <Grid item key={i}>
+          <Paper component='img' src={item.image} width="300px" key={item.id} />
+          <Typography variant='h6'>{item.title}</Typography>
+          <Typography variant='body1'>{item.price}</Typography>
+        </Grid>
+      ))}
     </Grid>
 </Grid>
 

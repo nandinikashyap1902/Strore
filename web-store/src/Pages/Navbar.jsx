@@ -7,9 +7,9 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-
+import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
-
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 
 import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone';
@@ -80,6 +80,7 @@ const handleResultClick = (productId) => {
   //const navigate = useNavigate();
   //const history = useHistory();
   return (
+    <>
     <AppBar id="AppBar" color="transparent">
       <Container>
         <Toolbar disableGutters>
@@ -148,17 +149,8 @@ const handleResultClick = (productId) => {
                     setSearchQuery(e.target.value);
                     handleSearch(e.target.value);
                 }}
-                value={searchQuery}></Input>
-                 {searchResults.map((product, index) => (
-                    <ListItem
-                        Buttonbase
-                        
-                        key={index}
-                        onClick={() => handleResultClick(product.id)}
-                    >
-                        <ListItemText primary={product.title} />
-                    </ListItem>
-                ))}
+                value={searchQuery}/>
+                 
               <IconButton>
                <SearchTwoTone/> 
               </IconButton>
@@ -189,6 +181,20 @@ const handleResultClick = (productId) => {
       </Container>
       <Outlet/>
     </AppBar>
+    <Grid container width={300}  sx={{backgroundColor:'red',position:'absolute', top:'70px',left:'45%', zIndex:2}}>
+    
+    {searchResults.map((product, index) => (
+<Grid item key={index} m={-1}>
+        <ListItem
+            Buttonbase
+            onClick={() => handleResultClick(product.id)}
+        >
+            <ListItemText primary={product.title} />
+        </ListItem>
+        </Grid>
+    ))}
+      </Grid>
+    </>
   );
 }
 export default ResponsiveAppBar;

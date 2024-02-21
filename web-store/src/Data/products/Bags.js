@@ -10,6 +10,7 @@ const Bags =[
             "stock": 17,
             "brand": "LouisWill",
             "category": "womens-bags",
+            "color":'Red',
             "thumbnail": "https://cdn.dummyjson.com/product-images/71/thumbnail.jpg",
             image: 
                 "https://cdn.dummyjson.com/product-images/71/1.jpg",
@@ -28,6 +29,7 @@ const Bags =[
             "stock": 27,
             "brand": "LouisWill",
             "category": "womens-bags",
+            "color":'Black',
             "thumbnail": "https://cdn.dummyjson.com/product-images/72/thumbnail.webp",
             "image": 
                 "https://cdn.dummyjson.com/product-images/72/1.jpg",
@@ -47,6 +49,7 @@ const Bags =[
             "stock": 101,
             "brand": "Bracelet",
             "category": "womens-bags",
+            "color":'pink',
             "thumbnail": "https://cdn.dummyjson.com/product-images/73/thumbnail.jpg",
             "image": 
                 "https://cdn.dummyjson.com/product-images/73/1.jpg",
@@ -65,6 +68,7 @@ const Bags =[
             "stock": 43,
             "brand": "Copenhagen Luxe",
             "category": "womens-bags",
+            "color":'white',
             "thumbnail": "https://cdn.dummyjson.com/product-images/74/thumbnail.jpg",
             "image": 
                 "https://cdn.dummyjson.com/product-images/74/1.jpg",
@@ -80,6 +84,7 @@ const Bags =[
             "description": "Seven Pocket Women Bag Handbags Lady Shoulder Crossbody Bag Female Purse Seven Pocket Bag",
             "price": 68,
             "discountPercentage": 14.87,
+            "color":'Black',
             "rating": 4.93,
             "stock": 13,
             "brand": "Steal Frame",

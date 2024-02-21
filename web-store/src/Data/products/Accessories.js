@@ -10,6 +10,7 @@ const accessory =[
                 "stock": 24,
                 "brand": "Eastern Watches",
                 "category": "womens-watches",
+                "color":'Black',
                 "thumbnail": "https://cdn.dummyjson.com/product-images/66/thumbnail.jpg",
                 "image": 
                     "https://cdn.dummyjson.com/product-images/66/1.jpg",
@@ -28,6 +29,7 @@ const accessory =[
                 "rating": 4.03,
                 "stock": 46,
                 "brand": "Eastern Watches",
+                "color":'Black',
                 "category": "womens-watches",
                 "thumbnail": "https://cdn.dummyjson.com/product-images/67/thumbnail.jpg",
                 "image": 
@@ -46,6 +48,7 @@ const accessory =[
                 "discountPercentage": 9.03,
                 "rating": 4.55,
                 "stock": 77,
+                "color":'Black',
                 "brand": "Luxury Digital",
                 "category": "womens-watches",
                 "thumbnail": "https://cdn.dummyjson.com/product-images/68/thumbnail.webp",
@@ -62,6 +65,7 @@ const accessory =[
                 "discountPercentage": 17.55,
                 "rating": 4.77,
                 "stock": 89,
+                "color":'white',
                 "brand": "Watch Pearls",
                 "category": "womens-watches",
                 "thumbnail": "https://cdn.dummyjson.com/product-images/69/thumbnail.jpg",
@@ -82,6 +86,7 @@ const accessory =[
                 "rating": 4.08,
                 "stock": 111,
                 "brand": "Bracelet",
+                "color":'pink',
                 "category": "womens-watches",
                 "thumbnail": "https://cdn.dummyjson.com/product-images/70/thumbnail.jpg",
                 "image": 
