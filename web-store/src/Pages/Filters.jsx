@@ -38,31 +38,64 @@ btn:{
 
 function Filters(products) {
   //console.log(products)
+  const items = products.products.items;
   const classes = useStyles();
   const [sortBy, setsorted] = React.useState('');
-  const [productlist, setProductlist] = React.useState([]);
-  const [displayedProducts, setDisplayedProducts] = useState(products.products.items);
+  // const [productlist, setProductlist] = React.useState([]);
+  const [displayedProducts, setDisplayedProducts] =React. useState(items);
   const handleChange = (event) => {
-    const value = event.target.value
+    let value = event.target.value
+    console.log(value)
     let sortedProducts = [];
     setsorted(value);
     switch (value) {
       case '10':
-        sortedProducts = [...products].sort((a, b) => a.price - b.price);
+        sortedProducts = [...items].sort((a, b) => a.price - b.price);
+        console.log(sortedProducts)
         break;
       case '20':
-        sortedProducts = [...products].sort((a, b) => b.price - a.price);
+        sortedProducts = [...items].sort((a, b) => b.price - a.price);
+        console.log(sortedProducts)
         break;
       case '30':
         // You would need to define the logic for sorting by popularity
         // For example, if products have a popularity property, you can sort based on that
-        sortedProducts = [...products].sort((a, b) => a.popularity - b.popularity);
+        sortedProducts = [...items].sort((a, b) => a.popularity - b.popularity);
+        console.log(sortedProducts)
         break;
       default:
-        sortedProducts = products;
+        sortedProducts = items;
     }
     setDisplayedProducts(sortedProducts);
   };
+
+  // const handleChange = (event) => {
+  //   let value = event.target.value;
+  //   // console.log("Selected value:", value);
+    
+  //   let sortedProducts = [];
+  
+  //   // Sort products based on the selected value
+  //   if (value === '10') {
+  //     sortedProducts = [...items].sort((a, b) => a.price - b.price);
+  //     if(sortedProducts.length>0)
+  //     console.log("Sorted products:", sortedProducts);
+  //   } else if (value === '20') {
+  //     sortedProducts = [...items].sort((a, b) => b.price - a.price);
+  //     console.log("Sorted products:", sortedProducts);
+  //   } else if (value === '30') {
+  //     // You would need to define the logic for sorting by popularity
+  //     // For example, if products have a popularity property, you can sort based on that
+  //     sortedProducts = [...items].sort((a, b) => a.popularity - b.popularity);
+  //   } else {
+  //     sortedProducts = items;
+  //   }
+  
+   
+  
+  //   setsorted(value);
+  //   setDisplayedProducts(sortedProducts);
+  // };
   
   return (
     <>
@@ -162,18 +195,18 @@ function Filters(products) {
 
 <Grid item width={1000}  m={4}>
 <Grid container spacing={3}>
-       {sortBy !== '' && productlist.length > 0 && productlist.map((item, i) => (
+       {sortBy !== '' && displayedProducts.length > 0 && displayedProducts.map((item, i) => (
         <Grid item key={i}>
           <Paper component='img' src={item.image} width="300px" key={item.id} />
-          <Typography variant='h6'>{item.title}</Typography>
-          <Typography variant='body1'>{item.price}</Typography>
+          {/* <Typography variant='h6'>{item.title}</Typography> */}
+          <Typography variant='body1'>sorted:-{item.price}</Typography>
         </Grid>
       ))} 
       {products?.products.items.map((item, i) => (
         <Grid item key={i}>
           <Paper component='img' src={item.image} width="300px" key={item.id} />
-          <Typography variant='h6'>{item.title}</Typography>
-          <Typography variant='body1'>{item.price}</Typography>
+          {/* <Typography variant='h6'>{item.title}</Typography> */}
+          <Typography variant='body1'>Rs.{item.price}</Typography>
         </Grid>
       ))}
     </Grid>

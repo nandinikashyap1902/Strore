@@ -846,7 +846,7 @@ export const westernWear = [
 //         "title": "Party Regular Sleeves Floral Print, Printed Women White...",
 //         "color": "white",
 //         "discountedPrice": 449,
-//         "price": 2500,
+//         "price": 2500   Rs.,
 //         "discountPersent": 80,
 //         "size": [
 //             {
