@@ -45,7 +45,7 @@ function Filters(products) {
   const [displayedProducts, setDisplayedProducts] =React. useState(items);
   const handleChange = (event) => {
     let value = event.target.value
-    console.log(value)
+    //console.log(value)
     let sortedProducts = [];
     setsorted(value);
     switch (value) {

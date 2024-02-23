@@ -29,6 +29,8 @@ import accessory from '../Data/products/Accessories';
 import Bags from '../Data/products/Bags';
 import footwear from '../Data/products/Footwear';
 import { westernWear } from '../Data/products/westernWear';
+import { createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@emotion/react';
 const allProducts =[...accessory,...Bags,...footwear,...westernWear];
 //console.log(allProducts)
 const pages = [ 'Western-wear', 'WomenBags','Footwear','acessories'];
@@ -39,6 +41,27 @@ const boxSX = {
     color:'#E0EBDC'
   },
 };
+// const theme = createTheme({
+//   palette: {
+//     ochre: {
+//       main: '#E3D026',
+//       light: '#E9DB5D',
+//       dark: '#A29415',
+//       contrastText: '#242105',
+//     },
+//   },
+// });
+const darkTheme = createTheme({
+  palette: {
+    primary: {
+     //light: '#009688',
+      main: '#ff4081',
+     // dark: '#002884',
+      //contrastText: '#fff',
+    },
+    
+  },
+});
 const useStyles = makeStyles({
 link:{
   textDecoration:'none',
@@ -51,6 +74,7 @@ link:{
 })
 function ResponsiveAppBar() {
   const classes = useStyles();
+  // const bg = theme();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [searchQuery, setSearchQuery] = React.useState('');
   const [searchResults, setSearchResults] = React.useState([]);
@@ -81,7 +105,10 @@ const handleResultClick = (productId) => {
   //const history = useHistory();
   return (
     <>
-    <AppBar id="AppBar" color="transparent">
+    <ThemeProvider theme={darkTheme}>
+
+    
+    <AppBar id="AppBar">
       <Container>
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -194,6 +221,7 @@ const handleResultClick = (productId) => {
         </Grid>
     ))}
       </Grid>
+      </ThemeProvider>
     </>
   );
 }
