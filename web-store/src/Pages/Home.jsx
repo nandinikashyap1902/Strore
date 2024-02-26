@@ -11,6 +11,7 @@ import CardGiftcardTwoToneIcon from '@mui/icons-material/CardGiftcardTwoTone';
 import { useNavigate } from 'react-router-dom';
 import '../CSS/App.css'
 //import SignIn from './SignIn';
+const services = ['Free Shipping Worldwide','24/7 Dedicated Support','Money Back Gaurantee','Member Discount']
 const useStyles = makeStyles({
   // card: {
   //   display: 'flex',
@@ -30,10 +31,15 @@ const useStyles = makeStyles({
     margin:'20px',
     display:"flex"
   },
-  list:{
-    color:'#648558',
-    border:'3px dotted#E0EBDC',
+  // list:{
+  //   color:'#12372A',
+  //   // border:'3px dotted#E0EBDC',
     
+  // },
+  textColor:{
+    color:'#12372A',
+    fontWeight:'bold',
+    fontFamily:'cursive'
   }
 });
 function Home() {
@@ -60,36 +66,36 @@ function Home() {
       {/* </Grid> */}
 
       <Grid container mt={5}>
-        <Grid item md={3} xs={12} sm={6} className={classes.list}>
-         <ListItemButton  >
-          <ListItemIcon>
-<SendTwoToneIcon/>
+        <Grid item md={3} xs={12} sm={6} className={classes.textColor}>
+         <ListItemButton >
+          <ListItemIcon >
+<SendTwoToneIcon className={classes.textColor}/>
           </ListItemIcon>
           <ListItemText primary="Free Shipping Worldwide" />
          </ListItemButton>
 </Grid>
-<Grid item md={3} xs={12} sm={6} className={classes.list}>
+<Grid item md={3} xs={12} sm={6} className={classes.textColor}>
          <ListItemButton>
           <ListItemIcon>
-<SupportAgentTwoToneIcon/>
+<SupportAgentTwoToneIcon className={classes.textColor}/>
           </ListItemIcon>
           <ListItemText primary="24/7 Dedicated Support" />
          </ListItemButton>
 </Grid>
 
-<Grid item md={3} xs={12} sm={6} className={classes.list}>
+<Grid item md={3} xs={12} sm={6} className={classes.textColor}>
          <ListItemButton>
           <ListItemIcon>
-<CurrencyRupeeTwoToneIcon/>
+<CurrencyRupeeTwoToneIcon className={classes.textColor}/>
           </ListItemIcon>
           <ListItemText primary="Money Back Gaurantee" />
          </ListItemButton>
 </Grid>
 
-<Grid item md={3} xs={12} sm={6} className={classes.list}>
+<Grid item md={3} xs={12} sm={6} className={classes.textColor}>
          <ListItemButton>
           <ListItemIcon>
-<CardGiftcardTwoToneIcon/>
+<CardGiftcardTwoToneIcon className={classes.textColor}/>
           </ListItemIcon>
           <ListItemText primary="Member Discount" />
          </ListItemButton>

@@ -55,9 +55,9 @@ const darkTheme = createTheme({
   palette: {
     primary: {
      //light: '#009688',
-      main: '#ff4081',
+      main: '#ADBC9F',
      // dark: '#002884',
-      //contrastText: '#fff',
+      contrastText: '#fff',
     },
     
   },
@@ -65,11 +65,15 @@ const darkTheme = createTheme({
 const useStyles = makeStyles({
 link:{
   textDecoration:'none',
-  color:'#648558',
+  color:'#12372A',
+  
   // "&:hover": {
   //   background:'#249268',
   //   color:'#E0EBDC'
   // },
+},
+boxColor:{
+  background:'#ADBC9F'
 }
 })
 function ResponsiveAppBar() {
@@ -108,19 +112,19 @@ const handleResultClick = (productId) => {
     <ThemeProvider theme={darkTheme}>
 
     
-    <AppBar id="AppBar">
+    <AppBar id="AppBar" >
       <Container>
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', }, }} className={classes.boxColor}>
             <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="black"
+              color="#12372A"
             >
-              <MenuIcon />
+              <MenuIcon color=''/>
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -140,15 +144,15 @@ const handleResultClick = (productId) => {
                 display: { xs: 'block', md: 'none' },
               }}
              >
-              <MenuItem  onClick={handleCloseNavMenu} className={classes.link} >
+              <MenuItem  onClick={handleCloseNavMenu}  >
                   <Typography textAlign="center">
-                  <Link to='/' >Home</Link>  
+                  <Link to='/' className={classes.link}>Home</Link>  
                     </Typography>
                 </MenuItem> 
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu} className={classes.link}>
+                <MenuItem key={page} onClick={handleCloseNavMenu} >
                   <Typography textAlign="center">
-                  <Link to={`/${page}`} >{page}</Link>  
+                  <Link to={`/${page}`} className={classes.link}>{page}</Link>  
                     </Typography>
                 </MenuItem>
               ))}
@@ -156,8 +160,8 @@ const handleResultClick = (productId) => {
           </Box>
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Button sx={{ my: 2, display: 'block',ml:3 }} className={classes.link}>
-            <Link to='/' >
+            <Button sx={{ my: 2, display: 'block',ml:3 }} >
+            <Link to='/' className={classes.link}>
             Home
             </Link> 
             </Button>
@@ -166,8 +170,8 @@ const handleResultClick = (productId) => {
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, display: 'block',ml:3 }}
-                className={classes.link}>
-             <Link to={`/${page}`} >{page}</Link>  
+                >
+             <Link to={`/${page}`} className={classes.link}>{page}</Link>  
               </Button>
             ))}
           </Box>
@@ -176,22 +180,22 @@ const handleResultClick = (productId) => {
                     setSearchQuery(e.target.value);
                     handleSearch(e.target.value);
                 }}
-                value={searchQuery}/>
+                value={searchQuery} className={classes.link}/>
                  
               <IconButton>
-               <SearchTwoTone/> 
+               <SearchTwoTone className={classes.link}/> 
               </IconButton>
              
 
               <Link to="/signIn">
               <IconButton>
-                <PersonTwoToneIcon/>
+                <PersonTwoToneIcon className={classes.link}/>
               </IconButton>
               </Link>
 
               <Link to="/wishlists">
               <IconButton>
-                <FavoriteBorderTwoToneIcon/>
+                <FavoriteBorderTwoToneIcon className={classes.link}/>
               </IconButton>
 </Link>
 
@@ -199,7 +203,7 @@ const handleResultClick = (productId) => {
 
 <Link to="/Bag">
 <IconButton>
-                <ShoppingBagTwoToneIcon/>
+                <ShoppingBagTwoToneIcon className={classes.link}/>
               </IconButton>
 </Link>
 </Tooltip>
@@ -208,7 +212,7 @@ const handleResultClick = (productId) => {
       </Container>
       <Outlet/>
     </AppBar>
-    <Grid container width={300}  sx={{backgroundColor:'red',position:'absolute', top:'70px',left:'45%', zIndex:2}}>
+    <Grid container width={300}  sx={{backgroundColor:'rgb(173, 188, 159)',position:'absolute', top:'70px',left:'45%', zIndex:2}}>
     
     {searchResults.map((product, index) => (
 <Grid item key={index} m={-1}>
