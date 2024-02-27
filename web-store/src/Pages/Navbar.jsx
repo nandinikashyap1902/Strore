@@ -37,8 +37,8 @@ const pages = [ 'Western-wear', 'WomenBags','Footwear','acessories'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const boxSX = {
   "&:hover": {
-    background:'#249268',
-    color:'#E0EBDC'
+    background:'#436850',
+    color:'#FBFADA'
   },
 };
 // const theme = createTheme({
@@ -57,7 +57,7 @@ const darkTheme = createTheme({
      //light: '#009688',
       main: '#ADBC9F',
      // dark: '#002884',
-      contrastText: '#fff',
+     // contrastText: '#fff',
     },
     
   },
@@ -71,6 +71,9 @@ link:{
   //   background:'#249268',
   //   color:'#E0EBDC'
   // },
+},
+btn:{
+  // display: 'block'
 },
 boxColor:{
   background:'#ADBC9F'
@@ -160,7 +163,8 @@ const handleResultClick = (productId) => {
           </Box>
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Button sx={{ my: 2, display: 'block',ml:3 }} >
+            <Button className={classes.btn} my={3} ml={3} 
+            sx={boxSX}>
             <Link to='/' className={classes.link}>
             Home
             </Link> 
@@ -169,7 +173,8 @@ const handleResultClick = (productId) => {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, display: 'block',ml:3 }}
+                className={classes.btn} my={2} ml={3} 
+            sx={boxSX}
                 >
              <Link to={`/${page}`} className={classes.link}>{page}</Link>  
               </Button>

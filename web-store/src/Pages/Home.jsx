@@ -10,8 +10,9 @@ import Middle from './Middle';
 import CardGiftcardTwoToneIcon from '@mui/icons-material/CardGiftcardTwoTone';
 import { useNavigate } from 'react-router-dom';
 import '../CSS/App.css'
+import Carousel from 'react-material-ui-carousel';
 //import SignIn from './SignIn';
-const services = ['Free Shipping Worldwide','24/7 Dedicated Support','Money Back Gaurantee','Member Discount']
+//const services = ['Free Shipping Worldwide','24/7 Dedicated Support','Money Back Gaurantee','Member Discount']
 const useStyles = makeStyles({
   // card: {
   //   display: 'flex',
@@ -39,7 +40,7 @@ const useStyles = makeStyles({
   textColor:{
     color:'#12372A',
     fontWeight:'bold',
-    fontFamily:'cursive'
+   fontSize:'12px'
   }
 });
 function Home() {
@@ -56,6 +57,8 @@ function Home() {
     //     'height': '9181','position':'relative','overflow':'hidden','marginLeft':'0px','marginRight':'0px'}}> 
    */}
        {/* <Grid container> */}
+       
+
         <Grid item lg={12} >
 
         <Card>
@@ -63,11 +66,12 @@ function Home() {
           image={img} className={classes.image}/>
         </Card>
         </Grid>
+       
       {/* </Grid> */}
 
       <Grid container mt={5}>
         <Grid item md={3} xs={12} sm={6} className={classes.textColor}>
-         <ListItemButton >
+         <ListItemButton  >
           <ListItemIcon >
 <SendTwoToneIcon className={classes.textColor}/>
           </ListItemIcon>

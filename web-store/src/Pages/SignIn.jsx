@@ -25,8 +25,9 @@ export default function SignIn() {
     const data = new FormData(event.currentTarget);
     console.log({
       email: data.get('email'),
-      password: data.get('password'),
+     
     });
+    navigate('/')
   };
 
   return (
@@ -66,10 +67,10 @@ export default function SignIn() {
         />
         <Button
           type="submit"
-          fullWidth
+          
           variant="contained"
           sx={{ mt: 3, mb: 2 }}
-        onClick={navigateHome}>
+       onSubmit={()=>handleSubmit()}>
           Sign In
         </Button>
       </Box>

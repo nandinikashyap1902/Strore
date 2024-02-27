@@ -20,6 +20,8 @@ import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
  import  '../CSS/Navbar.css'
  import { makeStyles } from '@mui/styles'
+ import { createTheme } from '@mui/material'
+import { ThemeProvider } from '@emotion/react'
 const useStyles = makeStyles({
   // box:{
   //   width:'150px'
@@ -31,11 +33,25 @@ const useStyles = makeStyles({
   btn:{
     color:'#648558',
 border:'3px solid #E0EBDC',
-fontFamily:'sans-serif'
+  },
+  head:{
+    fontSize:'1.5rem',
+    fontWeight:'bold',
+    color:'#648558'
   }
 })
 
-
+ const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#436850',
+      
+    },
+    // secondary:{
+    //   main: '#436850', 
+    // }
+  }
+})
 function Middle() {
   const classes = useStyles();
 const  navigate = useNavigate();
@@ -66,14 +82,17 @@ return (
     <Grid container  spacing={4} m={5}>
       <Grid item>
    
-      <Typography variant='h6' color='#648558' sx={{fontSize:'1.5rem',fontWeight:'bold'}}>
+      <Typography variant='h6' color='#436850' sx={{fontSize:'1.5rem',fontWeight:'bold'}}>
       Introducing Fashion Collection
       </Typography>
-        <Typography variant='p'color='#648558'>
+        <Typography variant='p'color='#648558' sx={{fontSize:'1.1rem'}}>
         We are a global housewares product design company.
         </Typography> 
         <br></br>
- <Button variant='outlined' >Shop Now</Button> 
+        <ThemeProvider theme={theme}>
+
+ <Button variant='outlined'  >Shop Now</Button> 
+        </ThemeProvider>
      {/* <Typography variant="p">shop</Typography> */}
       </Grid>
 
@@ -98,18 +117,24 @@ return (
 </Grid>
 <Grid item >
 <Box >
-      <Typography variant='h6'color='#648558' sx={{fontSize:'1.5rem',fontWeight:'bold'}}>
+      <Typography variant='h6'color='#436850' sx={{fontSize:'1.5rem',fontWeight:'bold'}}>
       Introducing Fashion Collection
       </Typography>
-        <Typography variant='p' color='#648558' >
+        <Typography variant='p' color='#648558' sx={{fontSize:'1.1rem'}}>
         We are a global housewares product design company.
         </Typography> 
         <br></br>
-<Button className={classes.btn} variant='outlined'>Shop Now</Button>
+        
+
+        <ThemeProvider theme={theme}>
+
+<Button  variant='outlined' >Shop Now</Button>
+</ThemeProvider>
+        
       </Box>
       </Grid>
     </Grid>
-    <Typography variant='h5' textAlign='center'mt={3} sx={{fontSize:'1.5rem',fontWeight:'bold',color:'#648558'}}>Top Product</Typography>
+    <Typography variant='h5' textAlign='center'mt={3} sx={{fontSize:'1.5rem',fontWeight:'bold',color:'#436850'}}>Top Product</Typography>
     <Divider></Divider>
     {/* <Grid container justifyContent="center" mt={3}>
       <Grid item>
