@@ -20,7 +20,7 @@ import {FormControl,InputLabel,Select,MenuItem,Input} from '@mui/material';
 // import { Divider,Container } from '@mui/material';
 import PropTypes from 'prop-types';
 import { Sheet } from '@mui/joy';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CheckBox } from '@mui/icons-material';
 import Footer from './Footer';
 const colors =['yellow','Red','Green','Blue','Black','white','pink'];
@@ -38,6 +38,7 @@ btn:{
 
 function Filters(products) {
   //console.log(products)
+  const navigate = useNavigate();
   const items = products.products.items;
   const classes = useStyles();
   const [sortBy, setsorted] = React.useState('');
@@ -96,7 +97,11 @@ function Filters(products) {
   //   setsorted(value);
   //   setDisplayedProducts(sortedProducts);
   // };
-  
+  function showProductDetail(product){
+    //console.log(i)
+    navigate('/productdetail',
+     { state: { product: product } });
+  }
   return (
     <>
 <Navbar></Navbar>
@@ -204,15 +209,15 @@ function Filters(products) {
       ))} 
       {products?.products.items.map((item, i) => (
         <Grid item key={i}>
-          <Paper component='img' src={item.image} width="300px" key={item.id} />
+
+          <Paper component='img' src={item.image} width="300px" key={item.id} sx={{cursor:'pointer'}} 
+          onClick={()=>showProductDetail(item)} />
           {/* <Typography variant='h6'>{item.title}</Typography> */}
           <Typography variant='body1'>Rs.{item.price}</Typography>
         </Grid>
       ))}
     </Grid>
 </Grid>
-
-
 </Grid>
 <Divider></Divider>
 <Footer></Footer>

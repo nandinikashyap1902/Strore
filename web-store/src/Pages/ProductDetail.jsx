@@ -1,16 +1,41 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import { Box, Divider,Grid,Paper, Typography,InputLabel,MenuItem,FormControl,Select, Button,Card } from '@mui/material'
-import { Sheet } from '@mui/joy'
+import { Sheet, ThemeProvider } from '@mui/joy'
 import {Input} from '@mui/material'
 //import products from '../Data/products/products'
-import TwitterIcon from '@mui/icons-material/Twitter';
-import FacebookTwoToneIcon from '@mui/icons-material/FacebookTwoTone';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import { makeStyles } from '@mui/styles'
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
-
+import Footer from './Footer'
+import { createTheme } from '@mui/material'
+const boxSX = {
+  "&:hover": {
+    background:'#436850',
+    color:'#FBFADA'
+  },
+};
+// const theme = createTheme({
+//   palette: {
+//     ochre: {
+//       main: '#E3D026',
+//       light: '#E9DB5D',
+//       dark: '#A29415',
+//       contrastText: '#242105',
+//     },
+//   },
+// });
+const theme = createTheme({
+  palette: {
+    primary: {
+     //light: '#009688',
+      main: '#ADBC9F',
+     // dark: '#002884',
+     // contrastText: '#fff',
+    },
+    
+  },
+});
 const styles = makeStyles({
   background:{
       background:"blue"
@@ -63,30 +88,30 @@ function ProductDetail() {
 
 <Box className="price">
 <label>Price:</label>
-<span>Rs.{product.price}</span>
+<span> Rs.{product.price}</span>
 </Box>
 
 <Box className="Type">
-<label>Type:</label>
-<span> {product.type}</span>
+<label>Size:</label>
+{/* <span>{product.size}</span> */}
 </Box>
 
 <Box className="availablity">
 <label>Availability:</label>
-<span>In Stock</span>
+<span> In Stock</span>
 </Box>
 
 <Box className="price">
 <label>Quantity:</label>
-<span>
 
-<FormControl >
+
+<FormControl variant='standard' size="small" sx={{ m: 1, minWidth: 120 }} >
         <InputLabel id="demo-simple-select-label" >Age</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={age}
-          label="Age"
+          label=""
           onChange={handleChange}
          sx={{width:80}}>
           <MenuItem value={10}>Ten</MenuItem>
@@ -94,10 +119,12 @@ function ProductDetail() {
           <MenuItem value={30}>Thirty</MenuItem>
         </Select>
       </FormControl>
-</span>
+
 </Box>
-<Button variant='contained'onClick={()=>addToCart(product)}>Add To Cart</Button>
-<Button variant='contained'onClick={()=>addToWishlist(product)}>Add To WishList</Button>
+
+<Button variant='outlined'onClick={()=>addToCart(product)} >Add To Cart</Button>
+<Button variant='outlined'onClick={()=>addToWishlist(product)} sx={{m:2}}>Add To WishList</Button>
+
 
 </Box>
   </Grid>
@@ -109,30 +136,8 @@ function ProductDetail() {
 
 </Card>
 </Box>
-<Grid container mt={6} ml={1}>
-        <Grid item >
-                   <TwitterIcon/> 
-          </Grid>
-                
-                <Grid item>
 
-                   <FacebookTwoToneIcon/>
-                </Grid>
-            
-            <Grid item>
-
-                   <InstagramIcon/>
-            </Grid>
-          </Grid>
-          <Grid  ml={1}>
-
-<Typography variant='h6'>Newsletter</Typography>
-<Typography variant='p'>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</Typography>
-<br></br>
-<Input placeholder='Email address'></Input>
-<Button variant="contained"  className={classes.btn}>Subscribe</Button>
-           
-</Grid>
+         <Footer></Footer>
     </Box>
     
     </>

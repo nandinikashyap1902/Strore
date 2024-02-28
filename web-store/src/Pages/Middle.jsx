@@ -69,11 +69,7 @@ const  navigate = useNavigate();
   </>
 //     const url = 'https://api.escuelajs.co/api/v1/products';
 
-function showProductDetail(product){
-  //console.log(i)
-  navigate('/productdetail',
-   { state: { product: product } });
-}
+
 return (
     <>
     
@@ -155,7 +151,7 @@ return (
   <CustomWidthTooltip title={longText} sx={{cursor:'pointer'}}>
 
   <Paper component='img' src={item.image} width="300px" key={item.id} 
-  onClick={()=>showProductDetail(item)} sx={{cursor:'pointer'}}>
+  >
   </Paper>
   </CustomWidthTooltip>
 </Grid>
