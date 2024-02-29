@@ -5,7 +5,6 @@ function WomenBags(items) {
   return (
    <>
     <Filters products={items}></Filters> 
-   
    </>
   )
 }
