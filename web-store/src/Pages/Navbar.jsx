@@ -206,7 +206,7 @@ const handleResultClick = (productId) => {
 
 <Tooltip title="your cart is empty">
 
-<Link to="/Bag">
+<Link to="/cart">
 <IconButton>
                 <ShoppingBagTwoToneIcon className={classes.link}/>
               </IconButton>
