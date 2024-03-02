@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
-import { Box, Divider,Grid,Paper, Typography,InputLabel,MenuItem,FormControl,Select, Button,Card } from '@mui/material'
+import { Box, Divider,Grid,Paper, Typography,InputLabel,MenuItem,FormControl,Select, Button,Card, CardMedia, Rating } from '@mui/material'
 import { Sheet, ThemeProvider } from '@mui/joy'
 import {Input} from '@mui/material'
 //import products from '../Data/products/products'
@@ -9,6 +9,9 @@ import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
 import Footer from './Footer'
 import { createTheme } from '@mui/material'
+import ProductsInBag from './ProductsInBag'
+import testimonials from '../Data/products/Testimonials'
+import { Scrollbar } from 'react-scrollbars-custom'
 const boxSX = {
   "&:hover": {
     background:'#436850',
@@ -46,6 +49,7 @@ const styles = makeStyles({
   }
 })
 function ProductDetail() {
+  const [dataToSend, setDataToSend] = useState(null);
   const navigate= useNavigate();
   const location = useLocation();
   const { product } = location.state;
@@ -58,11 +62,13 @@ function ProductDetail() {
   };
   function addToCart(product){
     //setItem(product)
-    navigate('/cart',{state:{product:product}})
+    //navigate('/cart',{state:{product:product}})
+    //console.log(product)
+    setDataToSend(product);
   }
   function addToWishlist(product){
     //setItem(product)
-    navigate('/wishlists',{state:{product:product}})
+   navigate('/wishlists',{state:{product:product}})
   }
   return (
     <>
@@ -129,17 +135,37 @@ function ProductDetail() {
 </Box>
   </Grid>
 </Grid>
-<Box sx={{width:500}} >
+<Box sx={{width:500,position:'relative',left:'20%'}} >
 <Sheet>Reviews</Sheet>
-<Divider></Divider>
-<Card>
+{
+  testimonials.map((item,i)=>{
+    return(
+      
 
+    <Card key={i} >
+      
+
+  <CardMedia component="img" src={item.image} sx={{width:'80px'}}></CardMedia>
+  <Rating ></Rating>
+  <Typography variant='p'>{item.comment}</Typography>
+  <br></br>
+  <Typography variant="p">{item.name}</Typography>
+      
 </Card>
+      
+    )
+    
+  })
+}
 </Box>
 
          <Footer></Footer>
     </Box>
-    
+   {
+    dataToSend!==null?
+    <ProductsInBag product={dataToSend}></ProductsInBag>
+    :''
+  } 
     </>
   )
 }

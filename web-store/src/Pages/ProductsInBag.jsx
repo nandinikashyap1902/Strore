@@ -6,17 +6,27 @@ import { Box } from '@mui/material';
 import {Table,TableBody,TableCell,TableContainer} from '@mui/material';
 import{TableHead,TableRow,Paper} from '@mui/material'
 import {Button} from '@mui/material';
-
-function ProductsInBag() {
-  const location = useLocation()
-  const {product} = location.state;
- // console.log(product)
+import PropTypes from 'prop-types'
+function ProductsInBag({...product}) {
+  //const location = useLocation()
+ //const item = {...product.product}
+  //const {product} = location.state;
+  //console.log(product)
+const Image = product.product.image;
+console.log(Image)
+const Title = product.product.title;
+console.log(Title)
+const price = product.product.price;
+console.log(price)
+const Total= product.product.price;
+console.log(Total)
   function createData(image, title, price, total) {
     return { image, title, price, total};
   }
   const rows = [
-    createData(product.image, product.title, product.price, product.price),
+    createData(Image, Title, price,Total),
   ];
+  console.log(rows)
   return (
     <>
     <Navbar></Navbar>
@@ -45,7 +55,7 @@ function ProductsInBag() {
   </TableRow>
 })} */}
 {
- rows.map((item,i)=>{
+rows.map((item,i)=>{
     return(
 
         <TableRow key={i}>
@@ -67,5 +77,7 @@ function ProductsInBag() {
     </>
   )
 }
-
+ProductsInBag.prototype={
+  product:PropTypes.object.isRequired
+}
 export default ProductsInBag

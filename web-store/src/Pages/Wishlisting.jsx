@@ -2,6 +2,8 @@
 import Navbar from './Navbar'
 import { useLocation } from 'react-router-dom'
 import { Grid, Typography,Paper,Box,Button,Card } from '@mui/material';
+
+
 function Wishlisting() {
   const location = useLocation();
   const {product} = location.state;

@@ -19,8 +19,10 @@ import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import { Outlet,Link } from 'react-router-dom';
 import {SearchTwoTone } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
-import { Tooltip } from '@mui/material';
+import {  Tooltip } from '@mui/material';
 import '../CSS/Navbar.css'
+import Badge from '@mui/material/Badge';
+import { styled } from '@mui/material/styles';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import { makeStyles } from '@mui/styles';
@@ -35,6 +37,14 @@ const allProducts =[...accessory,...Bags,...footwear,...westernWear];
 //console.log(allProducts)
 const pages = [ 'Western-wear', 'WomenBags','Footwear','acessories'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {  
+    top: 8,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+    
+  },
+}));
 const boxSX = {
   "&:hover": {
     background:'#436850',
@@ -200,7 +210,10 @@ const handleResultClick = (productId) => {
 
               <Link to="/wishlists">
               <IconButton>
+                <StyledBadge badgeContent={3} sx={{fontWeight:'bold'}}>
+
                 <FavoriteBorderTwoToneIcon className={classes.link}/>
+                </StyledBadge>
               </IconButton>
 </Link>
 
@@ -208,7 +221,12 @@ const handleResultClick = (productId) => {
 
 <Link to="/cart">
 <IconButton>
+  
+<StyledBadge badgeContent={2}>
+
                 <ShoppingBagTwoToneIcon className={classes.link}/>
+</StyledBadge>
+  
               </IconButton>
 </Link>
 </Tooltip>

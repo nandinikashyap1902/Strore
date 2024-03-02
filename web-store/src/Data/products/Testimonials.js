@@ -27,7 +27,7 @@ const testimonials = [
         id: 5,
         image: 'https://freepngimg.com/thumb/facebook/62681-flat-icons-face-computer-design-avatar-icon.png',
         comment: 'I love it!!',
-        name:'Shivam Sharma'
+        name:'Shivam Shakya'
     },
 
 ]
