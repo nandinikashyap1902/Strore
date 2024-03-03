@@ -158,9 +158,7 @@ return (
   ))})
 }
     </Grid>
-   
     <Testimonials reviews={testimonials}></Testimonials>
-    
     </>
   )
 }
