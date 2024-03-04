@@ -14,11 +14,9 @@ import Accesories from './Pages/Accesories'
 import accessory from './Data/products/Accessories'
 import ProductsInBag from './Pages/ProductsInBag'
 function App() {
-  
     return (
       <>
-      
-     <BrowserRouter>
+      <BrowserRouter>
     <Routes>
 <Route path="/" element={<Home/>}/>
 <Route path="/signIn" element={<SignIn/>}/>
