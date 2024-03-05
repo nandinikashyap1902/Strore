@@ -135,7 +135,7 @@ function ProductDetail() {
 </Box>
   </Grid>
 </Grid>
-<Box sx={{width:500,position:'relative',left:'20%'}} >
+{/* <Box sx={{width:500,position:'relative',left:'20%'}} >
 <Sheet>Reviews</Sheet>
 {
   testimonials.map((item,i)=>{
@@ -157,7 +157,7 @@ function ProductDetail() {
     
   })
 }
-</Box>
+</Box> */}
 
          <Footer></Footer>
     </Box>

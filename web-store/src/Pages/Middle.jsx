@@ -68,13 +68,8 @@ const  navigate = useNavigate();
   <FavoriteBorderTwoToneIcon />
   </>
 //     const url = 'https://api.escuelajs.co/api/v1/products';
-
-
 return (
     <>
-    
-    
-
     <Grid container  spacing={4} m={5}>
       <Grid item>
    
