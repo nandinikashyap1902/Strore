@@ -1,32 +1,15 @@
 const userModel = require('../../models/user.models')
-const twilio = require('twilio');
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-const twilioClient = new twilio(accountSid, authToken);
-function generateOTP() {
-    return Math.floor(100000 + Math.random() * 900000).toString();
-  }
-  
-const loginuser = async(req,res)=>{
+const bcrypt = require('bcrypt')
+const Signup=async(req,res)=>{
     try{
-       
-        const {PhoneNo} = req.body
-       
-       const existingUser = await userModel.findOne({PhoneNo})
+        const {email,password} = req.body
+       const existingUser = await userModel.findOne({email})
        if(existingUser){
         return res.status(400)
         .json({msg:"user already exist"})
        }
-
-       const otp = generateOTP();
-       await twilioClient.messages.create({
-        body: `Your OTP for sign up: ${otp}`,
-        from: process.env.TWILIO_PHONE_NUMBER,
-        to: PhoneNo
-      });
-      res.status(200).json({ message: 'OTP sent successfully' });
-
-           let result = await userModel.create({PhoneNo})
+       let hashedPassword = await bcrypt.hash(password, 10)
+           let result = await userModel.create({email,password:hashedPassword})
            res.send({
                data:result,
                msg:'user created',
@@ -39,7 +22,27 @@ const loginuser = async(req,res)=>{
         res.status(403).json({status:false,error:err})
     }
 }
+const loginuser = async(req,res)=>{
+    try{
+        console.log(req.body)
+        const {email,password} = req.body
+    const user = await userModel.findOne({email})
+    if(!user){
+        return res.status(400).json({msg:"user not found"})
+    }
+    const isPasswordMatch= await bcrypt.compare(password,user.password)
+    if (!isPasswordMatch) {
+        return res.status(401).json({ msg: "Invalid credentials" })
+    }
+      res.status(201).json({status:true,msg:"Login successful"})
+       
+    }
+    catch(err){
+       // console.log(err)
+        res.status(403).json({status:false,error:err})
+    }
+}
 
 module.exports={
-    loginuser
+  loginuser, Signup
 }
