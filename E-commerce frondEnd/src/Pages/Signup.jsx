@@ -3,6 +3,7 @@
 import Button from '@mui/material/Button';
 
 import TextField from '@mui/material/TextField';
+import Input from '@mui/material/Input';
 // import FormControlLabel from '@mui/material/FormControlLabel';
 // import Checkbox from '@mui/material/Checkbox';
 
@@ -10,27 +11,44 @@ import Box from '@mui/material/Box';
 
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import React, { useState } from 'react';
 
 import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
 import { Card } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar'
 
-
-export default function SignIn() {
- 
+const apiUrl = import.meta.env.VITE_API_URL
+export default function Signup() {
+    // const [email, setEmail] = useState('');
+    // const [password, setPassword] = useState('');
+    
   const navigate = useNavigate();
   const navigateHome =()=>{
     navigate('/')
   }
-  const handleSubmit = (event) => {
+ const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-     
-    });
-    // navigate('/signup')
+    // console.log(data)
+    // console.log({
+    //   email: data.get('email'),
+    // });
+   // navigate('/signin');
+    const response = await fetch(`${apiUrl}/api/signup`, {
+        
+        method: 'POST',
+
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: data.get('email'),
+          password: data.get('password')
+        })
+      });
+      const data1 = await response.json();
+     // console.log(data1)
   };
   const boxSX = {
     "&:hover": {
@@ -56,7 +74,7 @@ export default function SignIn() {
       }}
     >
       <Typography component="h1" variant="h5" color="#12372A">
-        Sign in 
+        Sign in or Sign up
       </Typography>
       <AccountCircleTwoToneIcon fontSize='large'sx={{mt:3}}/>
       <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
@@ -65,12 +83,22 @@ export default function SignIn() {
           required
          fullWidth
           id="email"
-          label="password"
+          label="email"
           name="email"
           autoComplete="email"
           autoFocus
         />
-  
+  <Input
+        
+          required
+         fullWidth
+          id="password"
+          label="Password"
+          name="password"
+          autoComplete="email"
+          autoFocus
+          type='password'
+        />
         <Button
           type="submit"
           

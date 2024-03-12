@@ -202,7 +202,7 @@ const handleResultClick = (productId) => {
               </IconButton>
              
 
-              <Link to="/signIn">
+              <Link to="/signup">
               <IconButton>
                 <PersonTwoToneIcon className={classes.link}/>
               </IconButton>

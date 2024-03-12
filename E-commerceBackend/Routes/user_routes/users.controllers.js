@@ -9,11 +9,11 @@ const Signup=async(req,res)=>{
         .json({msg:"user already exist"})
        }
        let hashedPassword = await bcrypt.hash(password, 10)
-           let result = await userModel.create({email,password:hashedPassword})
-           res.send({
-               data:result,
+           let user = await userModel.create({email,password:hashedPassword})
+           res.status(201).json({
+               data:user,
                msg:'user created',
-               status:true
+               status:true,
            })
        
     }
@@ -34,7 +34,9 @@ const loginuser = async(req,res)=>{
     if (!isPasswordMatch) {
         return res.status(401).json({ msg: "Invalid credentials" })
     }
-      res.status(201).json({status:true,msg:"Login successful"})
+      res.status(201).json({status:true,msg:"Login successful",
+    token:await user.generateToken(),
+userId:user.id.toString()})
        
     }
     catch(err){

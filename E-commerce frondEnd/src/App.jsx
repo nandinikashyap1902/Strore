@@ -13,13 +13,14 @@ import FootWear from './Pages/FootWear'
 import Accesories from './Pages/Accesories'
 import accessory from './Data/products/Accessories'
 import ProductsInBag from './Pages/ProductsInBag'
+import Signup from './Pages/Signup'
 function App() {
     return (
       <>
       <BrowserRouter>
     <Routes>
 <Route path="/" element={<Home/>}/>
-<Route path="/signIn" element={<SignIn/>}/>
+<Route path="/signin" element={<SignIn/>}/>
 <Route path="/wishlists" element={<Wishlisting/>}/>
 <Route path="/WomenBags" element={<WomenBags items={Bags}/>}/>
 <Route path="/Western-wear" element={<WesternWear items={westernWear}/>}/>
@@ -27,6 +28,7 @@ function App() {
 <Route path="/Footwear" element={<FootWear items={footwear}/>}/>
 <Route path='/acessories'element={<Accesories items={accessory}/>}/>
 <Route path='/cart'element={<ProductsInBag/>}/>
+<Route path="/signup" element={<Signup/>}></Route>
 </Routes>
      
      </BrowserRouter>
