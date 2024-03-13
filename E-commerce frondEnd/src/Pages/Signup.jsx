@@ -48,7 +48,7 @@ export default function Signup() {
         })
       });
       const data1 = await response.json();
-     // console.log(data1)
+     //console.log(data1)
   };
   const boxSX = {
     "&:hover": {
@@ -95,7 +95,7 @@ export default function Signup() {
           id="password"
           label="Password"
           name="password"
-          autoComplete="email"
+         
           autoFocus
           type='password'
         />
