@@ -6,7 +6,6 @@ import TextField from '@mui/material/TextField';
 import Input from '@mui/material/Input';
 // import FormControlLabel from '@mui/material/FormControlLabel';
 // import Checkbox from '@mui/material/Checkbox';
-
 import Box from '@mui/material/Box';
 
 import Typography from '@mui/material/Typography';
@@ -27,16 +26,16 @@ export default function Signup() {
   const navigateHome =()=>{
     navigate('/')
   }
+  
  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    let data= new FormData(event.currentTarget);
     // console.log(data)
     // console.log({
     //   email: data.get('email'),
     // });
    // navigate('/signin');
     const response = await fetch(`${apiUrl}/api/signup`, {
-        
         method: 'POST',
 
         headers: {
@@ -48,7 +47,12 @@ export default function Signup() {
         })
       });
       const data1 = await response.json();
+      // data.get('email')=""
+      // data.get('password')=""
      //console.log(data1)
+   data.set('email','')
+    data.set('password','')
+    console.log(FormData)
   };
   const boxSX = {
     "&:hover": {
@@ -87,7 +91,7 @@ export default function Signup() {
           name="email"
           autoComplete="email"
           autoFocus
-        />
+         value={FormData.currentTarget}/>
   <Input
         
           required
@@ -98,7 +102,7 @@ export default function Signup() {
          
           autoFocus
           type='password'
-        />
+         value={FormData.currentTarget}/>
         <Button
           type="submit"
           
@@ -111,7 +115,6 @@ export default function Signup() {
       </Box>
     </Card>
   </Container>
-  
     </>
     
    
