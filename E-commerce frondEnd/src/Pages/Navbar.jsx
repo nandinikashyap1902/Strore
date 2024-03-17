@@ -201,12 +201,22 @@ const handleResultClick = (productId) => {
                <SearchTwoTone className={classes.link}/> 
               </IconButton>
              
-
+<Tooltip title={<>
+<Link to="/signin" color="inherit">
+Sign In
+</Link>
+<br>
+</br>
+<Link to="/signup" color="inherit">
+            Sign Up
+          </Link>
+</>}>
               <Link to="/signup">
               <IconButton>
                 <PersonTwoToneIcon className={classes.link}/>
               </IconButton>
               </Link>
+</Tooltip>
 
               <Link to="/wishlists">
               <IconButton>

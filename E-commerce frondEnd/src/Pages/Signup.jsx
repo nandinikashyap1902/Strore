@@ -21,28 +21,28 @@ export default function Signup() {
   } = useForm({
     defaultValues: {
       email: '',
-      phoneNo:'',
-      password: ''
+      password: '',
+      confirmPassword:''
     },
   });
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
-    console.log(data);
+    //console.log(data);
     // Example fetch request
-  //   const response = await fetch(`${apiUrl}/api/signup`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(data)
-  //   });
+    const response = await fetch(`${apiUrl}/api/signup`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
 
-  //   if (response.ok) {
-  //     navigate('/signin');
-  //   } else {
-  //     console.error('Signup failed');
-  //   }
+    if (response.ok) {
+      navigate('/signin');
+    } else {
+      console.error('Signup failed');
+    }
    };
 
   const boxSX = {
@@ -62,11 +62,11 @@ export default function Signup() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            height: '350px'
+            height: '440px'
           }}
         >
           <Typography component="h1" variant="h5" color="#12372A">
-            Sign in or Sign up
+            Create Account
           </Typography>
           <AccountCircleTwoToneIcon fontSize='large' sx={{ mt: 3 }} />
           <Box component="form" onSubmit={handleSubmit(onSubmit)} noValidate sx={{ mt: 1 }}>
@@ -85,11 +85,11 @@ export default function Signup() {
                 />
               )}
             />
-            <Controller
+            {/* <Controller
               control={control}
               name="phoneNo"
               rules={{ required: 'PhoneNo is required', 
-              pattern: { value: /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/i, message: 'Invalid phone no.' } }}
+              pattern: { value: /^\+(?:[0-9] ?){6,14}[0-9]$/, message: 'Invalid phone no.' } }}
               render={({ field }) => (
                 <MuiTelInput
                   {...field}
@@ -98,10 +98,10 @@ export default function Signup() {
                   label="Phone"
                   error={!!errors.phoneNo}
                   helperText={errors.phoneNo ? errors.phoneNo.message : ''}
-                 type='number'
+          
                 />
               )}
-            />
+            /> */}
             <Controller
               control={control}
               name="password"
@@ -118,6 +118,22 @@ export default function Signup() {
                 />
               )}
             />
+          <Controller
+              control={control}
+              name="confirmPassword"
+              rules={{ required: 'Password is required', minLength: { value: 8, message: 'Password must be at least 8 characters long' } }}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  fullWidth
+                  id="confirmpassword"
+                  label="Confirm Password"
+                  type="password"
+                  error={!!errors.password}
+                  helperText={errors.password ? errors.password.message : ''}
+                />
+              )}
+            />
             <Button
               type="submit"
               variant="outlined"
@@ -125,6 +141,7 @@ export default function Signup() {
             >
               Continue
             </Button>
+            
           </Box>
         </Card>
       </Container>

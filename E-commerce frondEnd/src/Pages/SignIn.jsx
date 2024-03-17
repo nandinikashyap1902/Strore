@@ -61,11 +61,25 @@ export default function Signup() {
           }}
         >
           <Typography component="h1" variant="h5" color="#12372A">
-            Sign in or Sign up
+            Sign in
           </Typography>
           <AccountCircleTwoToneIcon fontSize='large' sx={{ mt: 3 }} />
           <Box component="form" onSubmit={handleSubmit(onSubmit)} noValidate sx={{ mt: 1 }}>
-            
+          <Controller
+              control={control}
+              name="email"
+              rules={{ required: 'Email is required', pattern: { value: /^\S+@\S+$/i, message: 'Invalid email address' } }}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  fullWidth
+                  id="email"
+                  label="Email"
+                  error={!!errors.email}
+                  helperText={errors.email ? errors.email.message : ''}
+                />
+              )}
+            />
             <Controller
               control={control}
               name="password"
@@ -88,6 +102,13 @@ export default function Signup() {
               sx={boxSX}
             >
               Continue
+            </Button>
+            <Button
+              type="submit"
+              variant="outlined"
+              sx={boxSX}
+            >
+              Forgot Password
             </Button>
           </Box>
         </Card>
