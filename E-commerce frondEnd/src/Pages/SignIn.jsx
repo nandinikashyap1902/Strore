@@ -9,9 +9,7 @@ import { Card } from '@mui/material';
 import { useForm, Controller } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
-
 const apiUrl = import.meta.env.VITE_API_URL;
-
 export default function Signup() {
   const {
     control,
