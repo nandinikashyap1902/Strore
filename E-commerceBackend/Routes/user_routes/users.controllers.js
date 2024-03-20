@@ -16,7 +16,6 @@ const Signup=async(req,res)=>{
                msg:'user created',
                status:true,
            })
-       
     }
     catch(err){
        // console.log(err)

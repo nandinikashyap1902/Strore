@@ -9,7 +9,6 @@ app.use(cors())
 const user_model = require('./models/user.models')
 app.use(bodyParser.json())
 require('./src/config/db')
-
 const user_routes = require('./Routes/user_routes')
 app.get("/",()=>{
     console.log("i am running")
