@@ -21,7 +21,6 @@ export default function Signup() {
     },
   });
   const navigate = useNavigate();
-
   const onSubmit = async (data) => {
     console.log(data);
     const response = await fetch(`${apiUrl}/api/signin`, {
@@ -37,7 +36,6 @@ export default function Signup() {
       console.error('Signin failed');
     }
   };
-
   const boxSX = {
     "&:hover": {
       background: '#436859',
