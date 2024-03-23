@@ -95,7 +95,6 @@ function ProductDetail() {
 <label>Price:</label>
 <span> Rs.{product.price}</span>
 </Box>
-
 <Box className="Type">
 <label>Size:</label>
 {/* <span>{product.size}</span> */}
