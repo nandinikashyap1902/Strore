@@ -82,7 +82,6 @@ function ProductDetail() {
   </Grid>
 
   <Grid item md={4} xs={12} sm={4} >
-    
     <Box  padding={2} sx={{width:400 }}>
   <Typography variant='h5'>{product.title}</Typography>
   <Divider></Divider>
