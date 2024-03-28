@@ -2,8 +2,6 @@
 import Navbar from './Navbar'
 import { useLocation } from 'react-router-dom'
 import { Grid, Typography,Paper,Box,Button,Card } from '@mui/material';
-
-
 function Wishlisting() {
   const location = useLocation();
   const {product} = location.state;
@@ -30,7 +28,6 @@ function Wishlisting() {
    
    <Grid container sx={{position:'relative',top:'90px', justifyContent:'center',alignItems:'center',overflow:'hidden',direction:'row'}}>
 <Typography>My wishlist</Typography>
-
 <Grid container m={6} >
 <Box>
 <Card>
