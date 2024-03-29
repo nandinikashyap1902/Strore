@@ -25,7 +25,6 @@ function Wishlisting() {
 <Button variant='contained'>LOGIN</Button>
 </Box>
    </Grid> */}
-   
    <Grid container sx={{position:'relative',top:'90px', justifyContent:'center',alignItems:'center',overflow:'hidden',direction:'row'}}>
 <Typography>My wishlist</Typography>
 <Grid container m={6} >
