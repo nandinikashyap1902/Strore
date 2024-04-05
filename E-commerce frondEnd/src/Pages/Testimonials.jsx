@@ -31,7 +31,6 @@ function Testimonials(reviews) {
     return (
       <>
       {/* <Grid sx={{'position':'relative'}}> */}
-      
 <Typography variant='h5' textAlign={'center'} mt={5} color="#436850" sx={{fontWeight:'bold'}}>Testimonials</Typography>
 {/* <Box sx={{border:'2px solid #E0EBDC'}}> */}
 <Grid sx={{border:'2px solid #ADBC9F'}} maxWidth='500px' m="auto">
@@ -51,7 +50,6 @@ function Testimonials(reviews) {
             name="read-only"  value={value} onChange={(event, newValue) => {
                 setValue(newValue);
               }} readOnly>
-       
             </Rating>
         </Grid>  
 </Grid>)})}
