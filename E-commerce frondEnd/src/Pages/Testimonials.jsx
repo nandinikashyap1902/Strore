@@ -67,7 +67,6 @@ function Testimonials(reviews) {
      </Grid>
 <Footer></Footer>
 {/* </Grid> */}
-
 </>
   )
 }
