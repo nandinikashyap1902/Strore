@@ -1,5 +1,4 @@
 const accessory =[
-    
             {
                 "id": 66,
                 "title": "Steel Analog Couple Watches",

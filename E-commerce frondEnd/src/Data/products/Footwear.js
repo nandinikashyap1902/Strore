@@ -1,6 +1,4 @@
 const footwear =[
-    
-        
             {
                 "id": 46,
                 "title": "women's shoes",
