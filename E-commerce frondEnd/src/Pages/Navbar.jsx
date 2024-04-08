@@ -220,7 +220,7 @@ Sign In
 
               <Link to="/wishlists">
               <IconButton>
-                <StyledBadge badgeContent={3} sx={{fontWeight:'bold'}}>
+                <StyledBadge badgeContent={'0'} sx={{fontWeight:'bold'}}>
 
                 <FavoriteBorderTwoToneIcon className={classes.link}/>
                 </StyledBadge>
@@ -232,7 +232,7 @@ Sign In
 <Link to="/cart">
 <IconButton>
   
-<StyledBadge badgeContent={2}>
+<StyledBadge badgeContent={'0'}>
 
                 <ShoppingBagTwoToneIcon className={classes.link}/>
 </StyledBadge>

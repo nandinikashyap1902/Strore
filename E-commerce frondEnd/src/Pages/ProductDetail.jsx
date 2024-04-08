@@ -12,6 +12,7 @@ import { createTheme } from '@mui/material'
 import ProductsInBag from './ProductsInBag'
 import testimonials from '../Data/products/Testimonials'
 import { Scrollbar } from 'react-scrollbars-custom'
+import Wishlisting from './Wishlisting'
 const boxSX = {
   "&:hover": {
     background:'#436850',
@@ -67,7 +68,11 @@ function ProductDetail() {
   }
   function addToWishlist(product){
     //setItem(product)
-   navigate('/wishlists',{state:{product:product}})
+  // navigate('/wishlists',{state:{product:product}})
+  return(
+
+    <Wishlisting product={product}></Wishlisting>
+  )
   }
   return (
     <>
