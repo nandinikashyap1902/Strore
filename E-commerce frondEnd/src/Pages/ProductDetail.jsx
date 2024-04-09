@@ -13,6 +13,7 @@ import ProductsInBag from './ProductsInBag'
 import testimonials from '../Data/products/Testimonials'
 import { Scrollbar } from 'react-scrollbars-custom'
 import Wishlisting from './Wishlisting'
+import { useContext,createContext } from 'react'
 const boxSX = {
   "&:hover": {
     background:'#436850',
@@ -33,7 +34,7 @@ const theme = createTheme({
   palette: {
     primary: {
      //light: '#009688',
-      main: '#ADBC9F',
+     main: '#ADBC9F',
      // dark: '#002884',
      // contrastText: '#fff',
     },
@@ -44,18 +45,21 @@ const styles = makeStyles({
       background:"blue"
   },
   btn:{
-      position:"relative",
-      top:"3px"
+    position:"relative",
+    top:"3px"
   }
 })
+const DataProvider = createContext();
+export const useProductData = () => useContext(DataProvider);
 function ProductDetail() {
   const [dataToSend, setDataToSend] = useState(null);
   const navigate= useNavigate();
   const location = useLocation();
   const { product } = location.state;
   // console.log(product)
-  //const[Item,setItem] = useState('');
-  const [age, setAge] = React.useState('');
+  const[Item,setItem] = useState(null);
+  const [age, setAge] =useState('');
+
   const classes = styles();
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -67,12 +71,12 @@ function ProductDetail() {
     setDataToSend(product);
   }
   function addToWishlist(product){
-    //setItem(product)
+    setItem(product)
   // navigate('/wishlists',{state:{product:product}})
-  return(
+  // return(
 
-    <Wishlisting product={product}></Wishlisting>
-  )
+  //   <Wishlisting product={product}></Wishlisting>
+  // )
   }
   return (
     <>
@@ -136,6 +140,11 @@ function ProductDetail() {
 
 </Box>
   </Grid>
+ 
+  <DataProvider.Provider value={{Item}}>
+  <Wishlisting></Wishlisting>
+  </DataProvider.Provider>
+  
 </Grid>
 {/* <Box sx={{width:500,position:'relative',left:'20%'}} >
 <Sheet>Reviews</Sheet>
@@ -173,3 +182,6 @@ function ProductDetail() {
 }
 
 export default ProductDetail
+// export const productData =()=>{
+//   return useContext(DataProvider)
+// }
