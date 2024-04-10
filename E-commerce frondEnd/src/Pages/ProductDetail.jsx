@@ -10,10 +10,10 @@ import { useNavigate } from 'react-router-dom'
 import Footer from './Footer'
 import { createTheme } from '@mui/material'
 import ProductsInBag from './ProductsInBag'
-import testimonials from '../Data/products/Testimonials'
-import { Scrollbar } from 'react-scrollbars-custom'
+// import testimonials from '../Data/products/Testimonials'
+// import { Scrollbar } from 'react-scrollbars-custom'
 import Wishlisting from './Wishlisting'
-import { useContext,createContext } from 'react'
+import { DataProvider } from './ProductData/DataTobeSend'
 const boxSX = {
   "&:hover": {
     background:'#436850',
@@ -49,8 +49,7 @@ const styles = makeStyles({
     top:"3px"
   }
 })
-const DataProvider = createContext();
-export const useProductData = () => useContext(DataProvider);
+
 function ProductDetail() {
   const [dataToSend, setDataToSend] = useState(null);
   const navigate= useNavigate();
@@ -142,7 +141,7 @@ function ProductDetail() {
   </Grid>
  
   <DataProvider.Provider value={{Item}}>
-  <Wishlisting></Wishlisting>
+  <Wishlisting/>
   </DataProvider.Provider>
   
 </Grid>

@@ -2,12 +2,12 @@
 import Navbar from './Navbar'
 import { useLocation } from 'react-router-dom'
 import { Grid, Typography,Paper,Box,Button,Card } from '@mui/material';
-import { useProductData } from './ProductDetail';
+import { useProductData } from './ProductData/DataTobeSend';
 function Wishlisting() {
-  const {Item} = useProductData()
-  // const location = useLocation();
-  // const {product} = location.state;
-  console.log(Item)
+  // const {Item} = useProductData()
+  // // const location = useLocation();
+  // // const {product} = location.state;
+  // console.log(Item)
   return (
     <>
     <Navbar></Navbar>
@@ -32,8 +32,8 @@ function Wishlisting() {
 <Grid container m={6} >
 <Box>
 <Card>
-{/* <Paper component='img' src={product.product.image} width={200}></Paper>
-<Typography>{product.product.title}</Typography> */}
+{/* <Paper component='img' src={Item.image} width={200}></Paper>
+<Typography>{Item.title}</Typography> */}
 <Button>Move To Bag</Button>
 </Card>
 </Box>
