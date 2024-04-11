@@ -36,8 +36,7 @@ const loginuser = async(req,res)=>{
         }
           res.status(201).json({status:true,msg:"Login successful",
         token:await user.generateToken(),
-    userId:user.id.toString()})
-           
+    userId:user.id.toString()})  
         }
     }
     catch(err){
