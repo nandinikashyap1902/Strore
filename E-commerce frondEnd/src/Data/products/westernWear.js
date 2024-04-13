@@ -1,5 +1,4 @@
 export const westernWear = [
-  
     {
         "image": "https://rukminim1.flixcart.com/image/612/612/xif0q/top/8/t/m/xxl-amrcrochetlacetop-madstitches-apparels-private-limited-original-imagr39r3kfmb5vy.jpeg?q=70",
         "brand": "Madstitches Apparels Private Limited",
