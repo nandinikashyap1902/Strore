@@ -1,5 +1,4 @@
 const Bags =[
-     
         {
             id: 71,
             title: "Women Shoulder Bags",
