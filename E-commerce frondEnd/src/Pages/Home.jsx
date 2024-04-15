@@ -4,7 +4,6 @@ import { makeStyles } from '@mui/styles';
 import CurrencyRupeeTwoToneIcon from '@mui/icons-material/CurrencyRupeeTwoTone';
 import SendTwoToneIcon from '@mui/icons-material/SendTwoTone';
 import SupportAgentTwoToneIcon from '@mui/icons-material/SupportAgentTwoTone';
-
 import img from '../Images/slider-1.webp';
 import Middle from './Middle';
 import CardGiftcardTwoToneIcon from '@mui/icons-material/CardGiftcardTwoTone';
