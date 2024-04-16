@@ -56,10 +56,7 @@ function Home() {
     //     'height': '9181','position':'relative','overflow':'hidden','marginLeft':'0px','marginRight':'0px'}}> 
    */}
        {/* <Grid container> */}
-       
-
         <Grid item lg={12} >
-
         <Card>
           <CardMedia component="img" 
           image={img} className={classes.image}/>
