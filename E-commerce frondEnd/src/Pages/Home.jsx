@@ -62,7 +62,6 @@ function Home() {
           image={img} className={classes.image}/>
         </Card>
         </Grid>
-       
       {/* </Grid> */}
 
       <Grid container mt={5}>
