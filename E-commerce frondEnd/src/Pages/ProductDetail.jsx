@@ -135,8 +135,6 @@ function ProductDetail() {
 
 <Button variant='outlined'onClick={()=>addToCart(product)} >Add To Cart</Button>
 <Button variant='outlined'onClick={()=>addToWishlist(product)} sx={{m:2}}>Add To WishList</Button>
-
-
 </Box>
   </Grid>
  
