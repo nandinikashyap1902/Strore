@@ -2,7 +2,6 @@ import { Grid,Paper,Button,Box, Typography, Tooltip, Divider} from '@mui/materia
 import img from '../Images/banner-1.webp'
 import img1 from "../Images/banner-2.webp"
 import img4 from "../Images/banner-4.webp"
-
 import products from '../Data/products/products'
 import Testimonials from './Testimonials'
 // import cosmetic from '../Images/cosmetic.avif'
