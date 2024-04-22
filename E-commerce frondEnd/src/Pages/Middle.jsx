@@ -87,7 +87,6 @@ return (
 <Grid item >
 <Paper component="img" src={img}width={300} id="img1"></Paper>
         </Grid>
-
         <Grid item>
         <Paper component="img" src={img1} width={600}></Paper>
         </Grid>
