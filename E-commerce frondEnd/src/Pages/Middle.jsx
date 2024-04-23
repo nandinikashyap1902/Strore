@@ -90,8 +90,7 @@ return (
         <Grid item>
         <Paper component="img" src={img1} width={600}></Paper>
         </Grid>
-      </Grid>
-          
+      </Grid> 
     <Grid container spacing={4} m={5}>
 <Grid item>
   <Paper component="img" src={img4} width={600}>
