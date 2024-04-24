@@ -38,7 +38,6 @@ border:'3px solid #E0EBDC',
     color:'#648558'
   }
 })
-
  const theme = createTheme({
   palette: {
     primary: {
