@@ -62,6 +62,7 @@ git clone https://github.com/nandinikashyap1902/Ecommerce_Store.git
 cd Ecommerce_Store
 ```
 
+
 ### Backend Setup:
 ### Navigate to the backend directory:
 ```bash
