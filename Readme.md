@@ -65,32 +65,26 @@ cd Ecommerce_Store
 
 ### Backend Setup:
 Navigate to the backend directory:
-```bash
 cd E-commerceBackend
 npm install
 
 ### Set up environment variables (.env):
-```bash
 PORT=5000
 JWT_SECRET=your_jwt_secret
 MONGO_URI=your_mongodb_uri
 
 ### Run the backend:
-```bash
 npm start
 
 ### Frontend Setup:
 Navigate to the frontend directory:
-```bash
 cd E-commerce frondEnd
 npm install
 
 ### Start the frontend using Vite:
-```bash
 npm run dev
 
 ### Run the application:
-```bash
 Frontend: http://localhost:3000
 Backend API: http://localhost:5000
 
