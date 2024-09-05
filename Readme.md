@@ -58,7 +58,7 @@ Database: MongoDB (or any database of your choice).
 ### 🧑‍💻 Installation
 
 1. Clone the repository:
-
+```bash
 git clone https://github.com/nandinikashyap1902/Ecommerce_Store.git
 cd Ecommerce_Store
 
