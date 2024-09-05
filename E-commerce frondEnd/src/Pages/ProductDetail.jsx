@@ -55,7 +55,7 @@ function ProductDetail() {
   const navigate= useNavigate();
   const location = useLocation();
   const { product } = location.state;
-  // console.log(product)
+   //console.log(product)
   const[Item,setItem] = useState(null);
   const [age, setAge] =useState('');
 
@@ -169,11 +169,11 @@ function ProductDetail() {
 
          <Footer></Footer>
     </Box>
-   {
+   {/* {
     dataToSend!==null?
     <ProductsInBag product={dataToSend}></ProductsInBag>
     :''
-  } 
+  }  */}
     </>
   )
 }
