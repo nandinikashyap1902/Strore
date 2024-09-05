@@ -15,30 +15,30 @@ A full-stack e-commerce platform built using ReactJS and Material UI on the fron
 
 ## ✨ Features
 
-# Frontend (ReactJS & Material UI):
-# User Authentication:
+## Frontend (ReactJS & Material UI):
+## User Authentication:
 Sign up and sign in functionality with JWT-based authentication.
 Validation for user input during login and registration.
 
-# Product Listings:
+## Product Listings:
 Display all products with the ability to sort by price, rating, or other criteria.
 Filter products based on categories, price ranges, or custom filters.
 
-# Product Details:
+## Product Details:
 View detailed product information, including images, prices, descriptions, and ratings.
 
-# Modern UI:
+## Modern UI:
 Responsive, sleek, and user-friendly design built with Material UI for an enhanced user experience.
 
-# Backend (ExpressJS & NodeJS):
+## Backend (ExpressJS & NodeJS):
 
-# API Endpoints:
+## API Endpoints:
 Serve product data, including filtering and sorting capabilities from the backend.
 
-# JWT Authentication:
+## JWT Authentication:
 Secure authentication using JSON Web Tokens to protect user data and routes.
 
-# Data Handling:
+## Data Handling:
 Manage products, users, and authentication through a MongoDB (or your preferred database solution).
 
  ## 🛠️ Tech Stack
@@ -55,7 +55,7 @@ Authentication: JWT for secure login, sign-up, and route protection.
 
 Database: MongoDB (or any database of your choice).
 
-### 🧑‍💻 Installation
+## 🧑‍💻 Installation
 
 1. Clone the repository:
 
@@ -75,19 +75,19 @@ MONGO_URI=your_mongodb_uri
 ## Run the backend:
 npm start
 
-# Frontend Setup:
+## Frontend Setup:
 Navigate to the frontend directory:
 cd E-commerce frondEnd
 npm install
 
-# Start the frontend using Vite:
+## Start the frontend using Vite:
 npm run dev
 
-# Run the application:
+## Run the application:
 Frontend: http://localhost:3000
 Backend API: http://localhost:5000
 
 ### 🤝 Contributing
 Feel free to contribute to this project. Follow the guidelines in CONTRIBUTING.md.
 
-# ✨ Don't forget to give this project a star if you found it useful! ✨
+## ✨ Don't forget to give this project a star if you found it useful! ✨
