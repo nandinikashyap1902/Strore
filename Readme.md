@@ -1,101 +1,93 @@
-🛒 E-Commerce Store
+# 🛒 E-Commerce Store
 
-A modern, full-stack e-commerce web application built with ReactJS and Material UI on the frontend, powered by Node.js and Express.js for the backend. It features secure JWT-based authentication, product sorting and filtering, and responsive design, making online shopping seamless and efficient.
+A full-stack e-commerce platform built using ReactJS and Material UI on the frontend, with a secure Express.js and Node.js backend. The application allows users to sign up, sign in with JWT authentication, browse products, sort and filter them, and view detailed product information.
 
-🚀 Demo
-Check out the live demo: Live Demo Link (Replace with your link)
+## 🖼️ Screenshot 
+![E-Commerce Store Screenshot](./assets/main.png)
 
-🖼️ Screenshot
-(./assets/main.png)
+![E-Commerce Store Screenshot](./assets/products-1.png)
 
-✨ Features
-User Authentication:
+![E-Commerce Store Screenshot](./assets/products-3.png)
 
-JWT-based authentication with secure login and registration.
-Form validation for both sign-in and sign-up flows.
-Product Listings:
+![E-Commerce Store Screenshot](./assets/products-2.png)
 
-Dynamic product listings fetched from the backend.
-Sorting: Easily sort products by price, rating, or relevance.
-Filtering: Filter products by category, price range, or custom attributes.
-Product Details:
+![E-Commerce Store Screenshot](./assets/signUp.png)
 
-Detailed view for each product with images, descriptions, prices, and reviews.
-Responsive UI:
+## ✨ Features
 
-Sleek and modern UI designed using Material UI, fully responsive across devices.
-🛠️ Tech Stack
-Technology	Description
-Frontend	ReactJS, Vite, Material UI
-Backend	Node.js, Express.js
-Authentication	JWT (JSON Web Token)
-Database	MongoDB (or your preferred database solution)
-Build Tool	Vite (for fast and optimized frontend builds)
-Styling	CSS, Material UI
-🧑‍💻 Installation & Setup
-To run this project locally, follow these steps:
+# Frontend (ReactJS & Material UI):
+# User Authentication:
+Sign up and sign in functionality with JWT-based authentication.
+Validation for user input during login and registration.
 
-Clone the repository:
+# Product Listings:
+Display all products with the ability to sort by price, rating, or other criteria.
+Filter products based on categories, price ranges, or custom filters.
 
-bash
-Copy code
-git clone https://github.com/yourusername/e-commerce-store.git
-cd e-commerce-store
-Backend Setup: Navigate to the backend directory:
+# Product Details:
+View detailed product information, including images, prices, descriptions, and ratings.
 
-bash
-Copy code
-cd backend
+# Modern UI:
+Responsive, sleek, and user-friendly design built with Material UI for an enhanced user experience.
+
+# Backend (ExpressJS & NodeJS):
+
+# API Endpoints:
+Serve product data, including filtering and sorting capabilities from the backend.
+
+# JWT Authentication:
+Secure authentication using JSON Web Tokens to protect user data and routes.
+
+# Data Handling:
+Manage products, users, and authentication through a MongoDB (or your preferred database solution).
+
+ ## 🛠️ Tech Stack
+## Frontend:
+
+ReactJS: Component-based architecture for building a dynamic and responsive user interface.
+Material UI: Pre-built components for a clean and modern UI/UX.
+Vite: Fast build tool for optimized frontend development.
+
+## Backend:
+
+Node.js & Express.js: REST API to handle requests, user authentication, and serve product data.
+Authentication: JWT for secure login, sign-up, and route protection.
+
+Database: MongoDB (or any database of your choice).
+
+### 🧑‍💻 Installation
+
+1. Clone the repository:
+
+git clone https://github.com/nandinikashyap1902/Ecommerce_Store.git
+cd Ecommerce_Store
+
+## Backend Setup:
+Navigate to the backend directory:
+cd E-commerceBackend
 npm install
-Set up your environment variables in a .env file:
 
-env
-Copy code
+## Set up environment variables (.env):
 PORT=5000
 JWT_SECRET=your_jwt_secret
 MONGO_URI=your_mongodb_uri
-Start the backend server:
 
-bash
-Copy code
+## Run the backend:
 npm start
-Frontend Setup: Navigate to the frontend directory:
 
-bash
-Copy code
-cd frontend
+# Frontend Setup:
+Navigate to the frontend directory:
+cd E-commerce frondEnd
 npm install
-Start the frontend using Vite:
 
-bash
-Copy code
+# Start the frontend using Vite:
 npm run dev
-Access the app:
 
+# Run the application:
 Frontend: http://localhost:3000
 Backend API: http://localhost:5000
-📅 Roadmap
- User authentication (JWT)
- Product listing with sorting and filtering
- Shopping cart functionality
- Payment integration (Stripe, PayPal)
- Order management and tracking
- Admin dashboard for product management
-🤝 Contributing
-Contributions are welcome! If you would like to contribute to this project, please fork the repository and create a new pull request with your proposed changes.
 
-Fork the repository
-Create your feature branch (git checkout -b feature/AmazingFeature)
-Commit your changes (git commit -m 'Add some amazing feature')
-Push to the branch (git push origin feature/AmazingFeature)
-Open a pull request
-📄 License
-This project is licensed under the MIT License – see the LICENSE file for details.
+### 🤝 Contributing
+Feel free to contribute to this project. Follow the guidelines in CONTRIBUTING.md.
 
-👩‍💻 Authors
-Your Name - GitHub Profile
-Collaborator Name - GitHub Profile
-💬 Contact
-If you have any questions, feel free to reach out at: youremail@example.com.
-
-✨ Don't forget to give this project a star if you found it useful! ✨
+# ✨ Don't forget to give this project a star if you found it useful! ✨
