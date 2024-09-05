@@ -56,16 +56,18 @@ Authentication: JWT for secure login, sign-up, and route protection.
 Database: MongoDB (or any database of your choice).
 
 ### 🧑‍💻 Installation
-
-1. Clone the repository:
-
+ ### Clone the repository:
+```bash
 git clone https://github.com/nandinikashyap1902/Ecommerce_Store.git
 cd Ecommerce_Store
+```
 
 ### Backend Setup:
-Navigate to the backend directory:
+### Navigate to the backend directory:
+```bash
 cd E-commerceBackend
 npm install
+```
 
 ### Set up environment variables (.env):
 PORT=5000
@@ -76,7 +78,7 @@ MONGO_URI=your_mongodb_uri
 npm start
 
 ### Frontend Setup:
-Navigate to the frontend directory:
+### Navigate to the frontend directory:
 cd E-commerce frondEnd
 npm install
 
