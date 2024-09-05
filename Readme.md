@@ -61,6 +61,7 @@ Database: MongoDB (or any database of your choice).
 ```bash
 git clone https://github.com/nandinikashyap1902/Ecommerce_Store.git
 cd Ecommerce_Store
+```bash
 
 ### Backend Setup:
 Navigate to the backend directory:
