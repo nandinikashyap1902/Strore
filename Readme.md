@@ -3,7 +3,7 @@ A full-stack e-commerce platform built using ReactJS and Material UI on the fron
 
 
 ##Screenshots:-
-
+(./assets/main)
 
 ##Features:
 Frontend (ReactJS & Material UI):
